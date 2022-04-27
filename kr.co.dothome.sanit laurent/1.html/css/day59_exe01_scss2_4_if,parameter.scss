@@ -1,0 +1,517 @@
+// header
+$hdrfz: #{'min(16px, 1.6rem)'};
+$hdrlh : #{'min(40px, 4.0rem)'};
+
+// mnTop
+$mnTopfz : #{'min(1.8rem, 18px)'};
+$mnToplh : #{'min(8.0rem, 80px)'};
+
+// main
+$main : #{'min(72px, 7.2rem)'};
+$mainlh : #{'min(80px, 8.0rem)'};
+
+$mainP : #{'min(24px, 2.4rem)'};
+$mainPlh : #{'min(40px, 4.0rem)'};
+
+// cnt01
+$cnth2fz : #{'min(36px, 3.6rem)'};
+$cnth2lh : #{'min(80px, 8.0rem)'};
+$cntpfz : #{'min(14px, 1.4rem)'};
+$cntplh : #{'min(20px, 2.0rem)'};
+$cntH3fz : #{'min(24px, 2.4rem)'};
+$cntH3lh : #{'min(40px, 4.0rem)'};
+$cntPfz : #{'min(14px, 1.4rem)'};
+$cntPlh : #{'min(20px, 2.0rem)'};
+
+
+// - font는 mixin을 활용하여 3가지 이상을 적용시킵니다.
+// 폰트 페이스
+
+@mixin ff($fontname, $url) {
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+}
+
+
+
+@include ff(Anton-Regular, 'Anton-Regular.ttf');
+@include ff(Eulyoo1945-Regular, 'Eulyoo1945-Regular.ttf');
+@include ff(DMSerifDisplay-Italic, 'DMSerifDisplay-Italic.ttf');
+
+
+// 220422 마지막
+// 단락단락 안에 넣어주는게 미디어 쿼리는 훨씬 편하다.
+
+@mixin mob {
+    @media (max-width: 420px) and (min-width: 0px){
+        // 콘텐트 꼭 필수로 넣어야 한다.
+        @content;
+    }
+}
+
+@include mob{
+
+}
+
+
+
+// mixin을 활용하여 header의 p태그일때는 color를 orange, article의 p태그일때는 color를 blue로 바꿔보세요!
+@mixin col($color) {
+    @if($color=='header'){
+        color: orangered;
+    } @else {
+        color: blue;
+    }
+};
+
+
+
+// grid
+// 파라미터 넣을 수 있는 공간
+@mixin grid($dev) {
+    @if($dev=='mob'){
+        width: 90%;
+        max-width: 700px;
+    } @else {
+        width: 80%;
+        max-width: 1080px;
+    }
+    margin: 0 auto;
+};
+
+
+html{
+    font-size: 3vw;
+
+    body{
+        font-size: 0.7vw;
+    }
+}
+
+// image
+@mixin image {
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover;
+}
+
+.mnTopWrap{
+    background: linear-gradient(90deg, orange 0%, #000 100%);
+
+    .mnTop{
+
+        // 그리드에 값 넣을때 모든 그리드에 값을 다 넣어야 적용 됨
+        @include grid('pc');
+
+        color: #fff;
+        font-size: $mnTopfz;
+        line-height: $mnToplh;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'DMSerifDisplay-Italic';
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+
+            h4{
+                margin-left: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.hdrWrap{
+    background-color: #222;
+    header{
+        @include grid('pc');
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding-top: #{'min(1rem, 40px)'};
+        padding-bottom:  #{'min(1rem, 40px)'};
+        font-size: $hdrfz;
+        line-height: $hdrlh;
+        nav{
+            border-right: 1px solid #fff;
+            padding-right: 2.0em;
+            width: calc(100% / 6);
+            padding-left: 2.0em;
+
+            h4{
+                &:nth-child(1){
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+            }
+
+        &:nth-child(1){
+            border-left: 1px solid #fff;
+            padding-left: 2.0em;
+
+        }
+        }
+
+    }
+}
+
+// main
+.mainWrap{
+    background-color: #ccc;
+
+    main{
+        @include grid('pc');
+        padding-top:  #{'min(6rem, 240px)'};
+        padding-bottom:  #{'min(9rem, 360px)'};
+
+        h2{
+            font-size: $main;
+            text-transform: uppercase;
+            line-height: $mainlh;
+            font-family: 'Anton-Regular';
+        }
+        p{
+            margin-top:  #{'min(1rem, 40px)'};
+            font-size: $mainP;
+            line-height: $mainPlh;
+            width: calc(100% / 12 * 6);
+            height:  #{'min(3rem, 120px)'};
+            overflow: hidden;
+            color: #333;
+            font-weight: 700;
+            font-family: 'Eulyoo1945-Regular'
+        }
+
+    }
+}
+
+// cnt
+
+.cntWrap{
+
+    // 미디어 쿼리 추가.
+    // 마지막은 opacity
+    background-color: rgba(0, 0, 0, 0.4);
+    @include grid('pc');
+    @include mob{
+        background-color: red;
+    };
+
+    // 미디어 쿼리 끝.
+    .content{
+        @include grid('pc');
+        margin-top:  #{'min(3rem, 120px)'};
+
+        header{
+            h2{
+                font-size: $cnth2fz;
+                line-height: $cnth2lh;
+                text-transform: capitalize;
+                font-weight: 700;
+                text-align: center;
+            }
+            p{
+                font-size: $cntPfz;
+                line-height: $cntPlh;
+                width: calc(100% / 12 * 6);
+                margin: 0 auto;
+                text-align: center;
+                height:  #{'min(1rem, 40px)'};
+                overflow: hidden;
+            }
+        }
+
+        section{
+            margin-top:  #{'min(2rem, 80px)'};
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+
+        &.cnt01{
+            article{
+                width:  #{'calc(100% / 4 - 20px)'};
+                margin: 0 auto;
+                .image{
+                    height:  #{'min(4.5rem, 180px)'};
+                    width: 100%;
+                    // background-color: #000;
+
+                    @include image();
+                    
+                    @for $img from 1 through 4 {
+                        &.i#{$img}{
+                            background-image: url('../images/brand_#{$img}.PNG');
+                        }
+                    }
+                }
+                .texts{
+                    h3{
+                        font-size: $cntH3fz;
+                        line-height: $cntH3lh;
+                        text-transform: capitalize;
+                        font-weight: 700;
+                        margin-top: #{'min(20px, 0.5rem)'};
+                    }
+
+                    ul{
+                        font-size: $cntPfz;
+                        line-height: $cntPlh;
+
+                        li{
+                            margin-top: 10px;
+                            &::before{
+                                display: inline;
+                                content: '- ';
+                            }
+                        }
+
+                    }
+
+                    .btns{
+                        font-size:  #{'min(30px, 3.0em)'};
+                        line-height:  #{'min(40px, 1rem)'};
+                        text-align: right;
+                        margin-right:  #{'min(0.5rem, 20px)'};
+                    }
+                }
+            }
+        }
+
+        &.cnt02{
+
+            section{
+                display: flex;
+                justify-content: space-between;
+
+                .artLeft{
+                    width: calc(100% / 12 * 4 - 20px);
+                    article{
+                        margin-top: #{'min(1rem, 40px) '};
+                        display: flex;
+                        justify-content: space-between;
+                        .image{
+                            width: calc(100% / 4);
+                            height: #{' min(2rem, 80px)'};
+                            background-color: #ccc;
+                            border-radius: 50%;
+
+                            @include image();
+
+                            @for $image3 from 1 through 3{
+                                &.i#{$image3}{
+                                    background-image: url('../images/cnt01_0#{$image3}.jpg');
+                                }
+                            }
+
+                        }
+                        .texts{
+                            width: calc(100% / 4 * 2.8);
+                            h3{
+                                font-size: $cntH3fz;
+                                line-height: $cntH3lh;
+                                text-transform: capitalize;
+                                font-weight: 700;
+                            }
+                            p{
+                                font-size: $cntPfz;
+                                line-height: $cntPlh;
+                                height:  #{'min(1rem, 40px)'};
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+
+                .artMiddle{
+                    width: calc(100% / 12 * 4 - 20px);
+                    .image{
+                        height: 400px;
+                        width: 100%;
+                        background-color: #ccc;
+                    }
+                }
+
+                .artRight{
+                    width: calc(100% / 12 * 4 - 20px);
+                    article{
+                        margin-top:  #{'min(1rem, 40px)'};
+                        display: flex;
+                        justify-content: space-between;
+                        direction: rtl;
+                        .image{
+                            width: calc(100% / 4);
+                            height:  #{'min(2rem, 80px)'};
+                            background-color: #ccc;
+                            border-radius: 50%;
+
+                            @include image();
+
+                            @for $image4 from 1 through 3 {
+                                &.i#{$image4}{
+                                    background-image: url('../images/brand_#{$image4}.PNG');
+                                }
+                            }
+                        }
+                        .texts{
+                            width: calc(100% / 4 * 2.8);
+                            h3{
+                                font-size: $cntH3fz;
+                                line-height: $cntH3lh;
+                                text-transform: capitalize;
+                                font-weight: 700;
+                            }
+                            p{
+                                font-size: $cntPfz;
+                                line-height: $cntPlh;
+                                height:  #{'min(1rem, 40px)'};
+                                overflow: hidden;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+// bnr
+
+.bnrWrap{
+    background: linear-gradient(90deg, #000 0%, #ccc 50%, #000 100%);
+    margin-top: 120px;
+
+    .banner{
+        @include grid('pc');
+        padding-top:  #{'min(2rem, 80px)'};
+        padding-bottom:  #{'min(2rem, 80px)'};
+        .images{
+            display: flex;
+            justify-content: space-between;
+            .image{
+                height:  #{'min(4rem, 160px)'};
+                width: calc(100% / 6 - 20px);
+                margin: 0 10px;
+                background-color: #000;
+                border-radius: 50%;
+
+                @include image();
+
+                @for $image2 from 1 through 6 {
+                    &.i#{$image2}{
+                        background-image: url('../images/cnt02_0#{$image2}.jpg');
+                    }
+                } 
+            }
+        }
+    }
+}
+
+// footer
+.ftrWrap{
+    background: linear-gradient(90deg, #000 0%, rgb(44, 44, 44) 50%, #000 100%);
+    margin-top: #{'min(120px, 3rem)'};
+    footer{
+        @include grid('pc');
+        color: #fff;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .ftrLeft{
+        h1{
+            font-size: #{'min(16px, 1.6em)'};
+            text-transform: uppercase;
+            line-height: $cntH3lh;
+        }
+        .sns{
+            i{
+                font-size: #{'min(30px, 3.0em)'};
+                line-height: #{'min(80px, 2rem)'};
+                margin-left: #{'min(10px, 1.0em)'};
+
+                &:nth-child(1){
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
+    .ftrRight{
+        nav{
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            h4{
+                margin-left: #{'min(20px, 2.0em)'};
+            }
+        }
+
+        h3{
+            text-align: right;
+            margin-top: #{'min(80px, 2rem)'};
+        }
+
+    }
+}
+
+
+// scss 미디어 쿼리 적용법
+// html에서는 따로 미디어쿼리 링크로 연결할 필요 없다
+// - media query를 활용하여 mixin이 mob일때 grid width:90%, mixin이 pc일때 grid width:80%를 적용해봅니다.
+@media (max-width:700px) and (min-width:0px){ 
+    .mnTopWrap{
+        .mnTop{
+            @include grid('mob');
+        }
+    }
+    .hdrWrap{
+        header{
+            @include grid('mob');
+        }
+    }
+    .mainWrap{
+        main{
+            @include grid('mob');
+        }
+    }
+    .cntWrap{
+        .content{
+            @include grid('mob');
+        }
+    }
+
+    .bnrWrap{
+        .banner{
+            @include grid('mob');
+        }
+    }
+
+    .ftrWrap{
+        footer{
+            @include grid('mob');
+        }
+    }
+}
+
+
+
+header{
+    p{
+        @include col('header');
+    }
+}
+
+article{
+    p{
+        @include col('blue');
+    }
+}

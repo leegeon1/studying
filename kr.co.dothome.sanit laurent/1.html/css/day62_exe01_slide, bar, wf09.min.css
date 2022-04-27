@@ -1,0 +1,2 @@
+body{position:relative}div{width:100vw;height:100vh;background-color:black}div:nth-child(2){background-color:blue}div:nth-child(3){background-color:red}div:nth-child(4){background-color:green}div:nth-child(5){background-color:pink}.paging{position:absolute;top:280px;right:80px;color:#fff}.paging li{background-color:#fc2;width:60px;height:30px;border-radius:20px;margin-top:50px;text-align:center}
+/*# sourceMappingURL=day62_exe01_slide, bar, wf09.min.css.map */
