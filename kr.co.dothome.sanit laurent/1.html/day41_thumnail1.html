@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day31_thumbnail.html</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.artView>div.thumbView{
+            width: 100%;
+            height: 500px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url(./images/cat-g61816cf04_640.jpg);
+            transition: all 0.5s;
+        }
+        div.artView>div.thumb{
+            width: 100%;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        div.artView>div.thumb>ul.thumbGroup{
+            width: 133.33%;
+        }
+        div.artView>div.thumb>ul.thumbGroup::after{
+            display: block;
+            clear: both;
+            content: '';
+        }
+        div.artView>div.thumb>ul.thumbGroup>li{
+            width: calc(100% / 8 - 20px);
+            float: left;
+            margin: 0 10px;
+            height: 100px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(1);
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(1){
+            background-image: url('./images/cat-g61816cf04_640.jpg');
+            filter: grayscale(0);
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(2){
+            background-image: url('./images/cat-g803c44e10_640.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(3){
+            background-image: url('./images/cat-gd153ba5ae_640.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(4){
+            background-image: url('./images/cat-g61816cf04_640.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(5){
+            background-image: url('./images/cat-g61816cf04_640.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(6){
+            background-image: url('./images/cat-gd153ba5ae_640.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(7){
+            background-image: url('./images/cat-g61816cf04_640.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(8){
+            background-image: url('./images/cat-gd153ba5ae_640.jpg');
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var j = 0;
+            
+
+            $('artView').css('background-image','url')
+
+            $('.thumbGroup>li').click(function(){
+                var image = $(this).css('background-image');
+                var thumbGrLi = $('.thumbView');
+                
+                // alert($(this).css('background-image'));
+
+                thumbGrLi.css('background-image', image);
+                $('.thumbGroup>li').css('filter', 'grayscale(1)');
+                $(this).css('filter', 'grayscale(0)');
+                var ind = $(this).index();
+                j = ind;
+
+            });
+
+            var i = 0;
+            $('button').eq(0).click(function(){
+                i++;
+                j++;
+                var image = $('.thumbGroup>li').eq(j).css('background-image');
+                $('.thumbView').css('background-image', image);
+                
+                
+                if(i > 2){
+                    i = 2;
+                }
+                if(j >= 7){
+                    j = 7;
+                }
+
+                console.log(i)
+                $('.thumbGroup').css('margin-left',i * -17  + '%');
+
+                $('.thumbGroup>li').css('filter','grayscale(1)');
+                $('.thumbGroup>li').eq(j).css('filter','grayscale(0)');
+            });
+
+            $('button').eq(1).click(function(){
+                i--;
+                j--;
+                var image = $('.thumbGroup>li').eq(j).css('background-image');
+                $('.thumbView').css('background-image', image);
+
+                if(i < 0){
+                    i = 0;
+                }
+                if(j<=0){
+                    j = 0;
+                }
+
+                console.log(i)
+                $('.thumbGroup').css('margin-left',i * -17  + '%');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="thumbView"></div>
+        <div class="thumb">
+            <ul class="thumbGroup">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <button>left</button>
+    <button>right</button>
+</body>
+</html>

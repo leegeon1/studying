@@ -1,0 +1,129 @@
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{
+    text-align: center;
+}
+div.cntWrap>div.content>div.header>h2{
+    line-height: 80px;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.header>p{
+    width: calc(100% / 12 * 8);
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 80px;
+}
+div.cntWrap>div.content>div.section>div.article::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.article>div.image{
+    width: calc(100% / 12 * 8 - 20px);
+    margin: 0 10px;
+    float: left;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.thumbView{
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../images/bnrWrap.jpg');
+    transition: background-image 0.5s;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb{
+    margin-top: 20px;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li{
+    height: 80px;
+    width: calc(100% / 4 - 20px);
+    margin: 0 10px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li.i1{
+    background-image: url('../images/bnrWrap.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li.i2{
+    background-image: url('../images/plc01.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li.i3{
+    background-image: url('../images/plc02.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.image>ul.thumb>li.i4{
+    background-image: url('../images/cnt01_pic01.jpg');
+}
+div.cntWrap>div.content>div.section>div.article>div.texts{
+    width: calc(100% / 12 * 4 - 20px);
+    margin: 0 10px;
+    float: left;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>h3{
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(odd){
+    line-height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-top: 1px solid black;
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(odd).show+li{
+    height: 120px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even){
+    transition: height 0.5s;
+    height: 0px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even)>p{
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    height: 100px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>div.btns{
+    border-top: 1px solid black;
+    padding-top: 14px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>div.btns::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>div.btns>div.btn{
+    width: calc(50% - 10px);
+    line-height: 40px;
+    font-size: 14px;
+    border: 2px solid #ff8902;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    float: left;
+    border-radius: 20px;
+    cursor: pointer;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>div.btns>div.btn:nth-child(2){
+    margin-left: 20px;
+}

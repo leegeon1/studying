@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 150px auto 0px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        div.artView>div.artGroup{
+            width: 100%;
+            height: 500px;
+            transition: margin-left 1s;
+        }
+        div.artView>div.artGroup>div.article{
+            width: 100%;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        div.artView>div.artGroup>div.article:nth-child(1){
+            background-image: url('./images/cnt01_pic01.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(2){
+            background-image: url('./images/cnt01_pic02.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(3){
+            background-image: url('./images/cnt02_pic01.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(4){
+            background-image: url('./images/cnt02_pic02.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(5){
+            background-image: url('./images/mainwrap.jpg');
+        }
+        div.artView>ul{
+            width: 40%;
+            height: 20px;
+            position: absolute;
+            left: 0px;
+            top: 150px;
+        }
+        div.artView>ul.paging>li{
+            width: 20px;
+            height: 20px;
+            background-color: #fc2;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: all 1s;
+        }
+        div.artView>ul.paging>li.show{
+            height: 30px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.paging>li').click(function(){
+                $('.paging>li').removeClass('show');
+                $(this).addClass('show');
+                var ind = $(this).index();
+                i = ind;
+                $('.artGroup').css('margin-top',ind * -500+'px') 
+            });
+            var i = 0;
+            $('button').eq(1).click(function(){
+                i++;
+                console.log(i)
+                if(i>4){
+                    i=4;
+                }
+                $('.artGroup').css('margin-top',i * -500+'px');
+                $('.paging>li').removeClass('show');
+                $('.paging>li').eq(i).addClass('show');
+            });
+             // button에 show를 적용시키려면 일단 전체 적용되기 때문에 $('.paging>li').removeClass('show'); 지워주고
+             // $('.paging>li').eq(i).addClass('show');를 통해서 eq()를 사용하고 eq를 i변수로 쓰면서 show에 숫자를 적용시켜준다
+            $('button').eq(0).click(function(){
+                i--;
+                console.log(i)
+                if(i<=0){
+                    i=0;
+                }
+                $('.artGroup').css('margin-top',i * -500+'px');
+                $('.paging>li').removeClass('show');
+                $('.paging>li').eq(i).addClass('show');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+        </div>
+        <ul class="paging">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button>up</button>
+    <button>down</button>
+</body>
+</html>

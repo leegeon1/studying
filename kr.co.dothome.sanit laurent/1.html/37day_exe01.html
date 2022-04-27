@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                // alert('버튼을 클릭하니까 이런일이 생겨요')
+                var dan = prompt('숫자');
+                for(var i=0; i<10;i++){
+                    console.log(dan+'*'+i+'='+dan*i);
+                }
+            })
+            $('div').click(function(){
+                alert('버튼2 입니다.');
+            });
+        });
+    </script>
+</head>
+<body>
+    <script>
+        // var name = prompt('학생명을 입력하세요');
+        // console.log('이름:'+name);
+
+        // var grade = prompt('학년을 입력하세요.')
+        // switch(grade){
+        //     case '1학년' : console.log(grade+'입니다.');
+        //     break;
+        //     case '2학년' : console.log(grade+'입니다.');
+        //     break;
+        //     case '3학년' : console.log(grade+'입니다.')
+        //     break;
+        //     default :alert('우리 학교 학생이 아닙니다.');
+        // }
+
+        // var score = parseInt(prompt('점수를 입력하세요.'));
+        // if(score>=95 && score>=100){
+        //     console.log('A+');
+        // }else if(score>=85 && score<=94){
+        //     console.log('A'); 
+        // }else if(score>=75 && score<=84){
+        //     console.log('B+');
+        // }else if(score>=70 && score<=74){
+        //     console.log('B');
+        // }else if(score>=60 && score<=69){
+        //     console.log('C');
+        // }else{
+        //     console.log('낙제');
+        // }
+        
+        
+        //반복문
+        // var i = 0;
+        // var dan = parseInt(prompt('단수를 입력해주세요.'));
+        // while(i < 9){
+        //     i++;
+        //     console.log(dan+'*'+i+'='+dan*i);
+        // }
+
+        // for(var i = 1 ; i < 11; i++){
+        //     // console.log(i+'little');
+        //     if(i == 10){
+        //         console.log(i+'little indians boys');
+        //     }else if(i%3 == 0){
+        //         console.log(i+'little indians');
+        //     }else{
+        //         console.log(i+'little')
+        //     }
+        // }
+        
+        // for(var i = 0 ; i < 10; i++){
+        //     console.log(i+'little')
+        // }
+
+
+    </script> 
+    <!-- <script src="./js/jquery-3.6.0.min.js"></script> 첫번째 -->
+    <!-- <script> 두번째 -->
+        <!-- $(function(){ 이게 세번째
+
+        }); -->
+    </script>
+
+    <button>버튼을 클릭하면 구구단 시작</button>
+    <div>버튼2</div>
+</body>
+</html>

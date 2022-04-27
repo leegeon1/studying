@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/day43_que01.css">    
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var i = 0;
+            $('ul>li').click(function(){
+                $('ul>li').removeClass('show');
+                $(this).addClass('show');
+            });
+            // 2번 슬라이드
+            $('button').eq(1).click(function(){
+                i++;
+                if(i>=9){
+                    i=9;
+                    $(this).css('opacity','0');
+                };
+                $('button').eq().css('opacity','1');
+                $('.sildeGroup').css('margin-left', i * -33.3+'%');
+            });
+            $('button').eq(0).click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                    $(this).css('opacity','0');
+                }
+                $('button').eq(1).css('opacity','1');
+                $('.sildeGroup').css('margin-left', i * -33.3+'%')
+            });
+
+            // 3번
+            $('.paging>li').click(function(){
+                $('.paging>li').removeClass('gd')
+                $(this).addClass('gd')
+                var ind = $(this).index();
+                $('.indGroup').css('margin-left',ind * -100+'%');
+                i = ind;
+            });
+            $('button').eq(2).click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                $('.paging>li').removeClass('gd')
+                $('.paging>li').eq(i).addClass('gd')
+                $('.indGroup').css('margin-left', i * -100+'%');
+            });
+            $('button').eq(3).click(function(){
+                i++;
+                if(i>=4){
+                    i=4;
+                }
+                $('.paging>li').removeClass('gd')
+                $('.paging>li').eq(i).addClass('gd')
+                $('.indGroup').css('margin-left', i * -100+'%');
+            });
+            // 4번
+            $('.sircle>li').click(function(){
+                var ind = $(this).index()
+                $('.SlideGroup').css('margin-top',ind * -500+'px');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <ul>
+            <li class="show">title</li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis aut incidunt blanditiis modi. At sint esse tempore voluptate, officia ut sunt accusantium facere, corrupti doloremque veniam similique ipsum dolores repellendus?</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis aut incidunt blanditiis modi. At sint esse tempore voluptate, officia ut sunt accusantium facere, corrupti doloremque veniam similique ipsum dolores repellendus?</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis aut incidunt blanditiis modi. At sint esse tempore voluptate, officia ut sunt accusantium facere, corrupti doloremque veniam similique ipsum dolores repellendus?</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis aut incidunt blanditiis modi. At sint esse tempore voluptate, officia ut sunt accusantium facere, corrupti doloremque veniam similique ipsum dolores repellendus?</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis aut incidunt blanditiis modi. At sint esse tempore voluptate, officia ut sunt accusantium facere, corrupti doloremque veniam similique ipsum dolores repellendus?</p></li>
+        </ul>
+        <!-- 2 번 문제 -->
+        <div class="content cnt02">
+            <div class="sildeGroup">
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+            </div>
+            <button class="cnt02_left">left</button>
+            <button class="cnt02_right">right</button>
+        </div>
+        <!-- 3번 문제 -->
+        <div class="content cnt03">
+            <div class="indView">
+                <div class="indGroup">
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                </div>
+            </div>
+            <ul class="paging">
+                <li class="gd"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <button>left</button>
+        <button>right</button>
+        <div class="content cnt04">
+            <div class="indSlideview">
+                <div class="SlideGroup">
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                </div>
+                <div class="SlideGroup">
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                </div>
+                <div class="SlideGroup">
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                    <div class="article"></div>
+                </div>
+            </div>
+            <ul class="sircle">
+                <li class="show"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

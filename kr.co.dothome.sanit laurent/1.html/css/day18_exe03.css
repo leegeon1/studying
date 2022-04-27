@@ -1,0 +1,9 @@
+ul{}
+ul>li{
+    width: 19%;
+    height: 250px;
+    background-color: black;
+    margin-top: 100px;
+    float: left;
+}
+div.box{}

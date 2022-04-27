@@ -1,0 +1,127 @@
+/* 메뉴탑 선택자 */
+div.mntopWrap{}
+div.mntopWrap>div.menuTop{}
+div.mntopWrap>div.menuTop>div.info{}
+div.mntopWrap>div.menuTop>div.info>h4{}
+div.mntopWrap>div.menuTop>ul.nav{}
+div.mntopWrap>div.menuTop>ul.nav>li{}
+
+/* 헤더 */
+div.hdrWrap{}
+div.hdrWrap>div.header{}
+div.hdrWrap>div.header>h1{}
+div.hdrWrap>div.header>h1>b{}
+div.hdrWrap>div.header>ul.nav{}
+div.hdrWrap>div.header>ul.nav>li{}
+
+/* 메인 */
+
+div.mainWrap{}
+div.mainWrap>div.main{}
+div.mainWrap>div.main>div.text{}
+div.mainWrap>div.main>div.text>h2{}
+div.mainWrap>div.main>div.text>p{}
+div.mainWrap>div.main>div.btns{}
+div.mainWrap>div.main>div.btns>i{}
+div.mainWrap>div.main>div.btns>span{}
+
+/* 컨텐츠 공통 */
+div.cntWrap{}
+div.cntWrap>div.content{}
+div.cntWrap>div.content>div.header{}
+div.cntWrap>div.content>div.header>div.hdrLeft{}
+div.cntWrap>div.content>div.header>div.hdrLeft>h2{}
+div.cntWrap>div.content>div.header>div.hdrRight{}
+div.cntWrap>div.content>div.header>div.hdrRight>div.btn{}
+div.cntWrap>div.content>div.section{}
+div.cntWrap>div.content>div.section>div.article{}
+div.cntWrap>div.content>div.section>div.article>div.texts{}
+div.cntWrap>div.content>div.section>div.article>div.texts>h3{}
+div.cntWrap>div.content>div.section>div.article>div.texts>h5{}
+div.cntWrap>div.content>div.section>div.article>div.texts>p{}
+div.cntWrap>div.content>div.section>div.article>div.texts>div.btn{}
+div.cntWrap>div.content>div.section>div.article>div.texts>div.btn>i{}
+div.cntWrap>div.content>div.section>div.article>div.image.i1{}
+div.cntWrap>div.content>div.section>div.article>div.image.i2{}
+div.cntWrap>div.content>div.section>div.article>div.image.i3{}
+div.cntWrap>div.content>div.section>div.article>div.image.i4{}
+
+/* 컨텐츠1 */
+div.cntWrap.cnt01{}
+div.cntWrap.cnt01>div.header{}
+div.cntWrap.cnt01>div.header>div.hdrLeft{}
+div.cntWrap.cnt01>div.header>div.hdrLeft>h2{}
+div.cntWrap.cnt01>div.header>div.hdrLeft>ul.tab{}
+div.cntWrap.cnt01>div.header>div.hdrLeft>ul.tab>li{}
+div.cntWrap.cnt01>div.header>div.hdrRight{}
+div.cntWrap.cnt01>div.header>div.hdrRight>div.btn{}
+div.cntWrap.cnt01>div.header>div.hdrRight>div.btn>i{}
+div.cntWrap.cnt01>div.section{}
+div.cntWrap.cnt01>div.section>div.article{}
+div.cntWrap.cnt01>div.section>div.article>div.image.i1{}
+div.cntWrap.cnt01>div.section>div.article>div.image.i2{}
+div.cntWrap.cnt01>div.section>div.article>div.image.i3{}
+div.cntWrap.cnt01>div.section>div.article>div.image.i4{}
+div.cntWrap.cnt01>div.section>div.article>div.texts{}
+div.cntWrap.cnt01>div.section>div.article>div.texts>h5{}
+div.cntWrap.cnt01>div.section>div.article>div.texts>h3{}
+div.cntWrap.cnt01>div.section>div.article>div.texts>p{}
+div.cntWrap.cnt01>div.section>div.article>div.texts>div.btn{}
+div.cntWrap.cnt01>div.section>div.article>div.texts>div.btn>i{}
+
+/* 컨텐츠2 */
+div.cntWrap.cnt02{}
+div.cntWrap.cnt02>div.header{}
+div.cntWrap.cnt02>div.header>div.hdrLeft{}
+div.cntWrap.cnt02>div.header>div.hdrLeft>h2{}
+div.cntWrap.cnt02>div.header>div.hdrLeft>h5{}
+div.cntWrap.cnt02>div.header>div.hdrRight{}
+div.cntWrap.cnt02>div.header>div.hdrRight>div.btn{}
+div.cntWrap.cnt02>div.section{}
+div.cntWrap.cnt02>div.section>div.article{}
+div.cntWrap.cnt02>div.section>div.article>div.image.i1{}
+div.cntWrap.cnt02>div.section>div.article>div.image.i2{}
+div.cntWrap.cnt02>div.section>div.article>div.image.i3{}
+div.cntWrap.cnt02>div.section>div.article>div.image.i4{}
+div.cntWrap.cnt02>div.section>div.article>div.texts{}
+div.cntWrap.cnt02>div.section>div.article>div.texts>div.textLeft{}
+div.cntWrap.cnt02>div.section>div.article>div.texts>div.textLeft>div.score{}
+div.cntWrap.cnt02>div.section>div.article>div.texts>div.textLeft>h5{}
+div.cntWrap.cnt02>div.section>div.article>div.texts>div.textLeft>div.score>h3{}
+div.cntWrap.cnt02>div.section>div.article>div.texts>div.textLeft>div.score>h5{}
+div.cntWrap.cnt02>div.section>div.article>div.texts>div.textRight{}
+div.cntWrap.cnt02>div.section>div.article>div.texts>div.textRight>h3{}
+div.cntWrap.cnt02>div.section>div.article>div.texts>div.textRight>p{}
+
+/* 배너 공통 */
+div.bnrWrap{}
+div.bnrWrap>div.banner{}
+div.bnrWrap>div.banner h2{}
+div.bnrWrap>div.banner p{}
+div.bnrWrap>div.banner div.btn{}
+
+/* 배너1 */
+div.bnrWrap.bnrWrap01{}
+div.bnrWrap.bnrWrap01>div.banner{}
+div.bnrWrap.bnrWrap01>div.banner>h2{}
+div.bnrWrap.bnrWrap01>div.banner>p{}
+div.bnrWrap.bnrWrap01>div.banner>div.btn{}
+
+/* 배너2 */
+div.bnrWrap.bnrWrap02{}
+div.bnrWrap.bnrWrap02>div.banner{}
+div.bnrWrap.bnrWrap02>div.banner>div.texts{}
+div.bnrWrap.bnrWrap02>div.banner>div.texts>h2{}
+div.bnrWrap.bnrWrap02>div.banner>div.texts>h5{}
+div.bnrWrap.bnrWrap02>div.banner>div.texts>p{}
+div.bnrWrap.bnrWrap02>div.banner>div.texts>div.btn{}
+div.bnrWrap.bnrWrap02>div.banner>div.image{}
+
+/* 푸터 */
+div.ftrWrap{}
+div.ftrWrap>div.footer{}
+div.ftrWrap>div.footer>div{}
+div.ftrWrap>div.footer>div>h4{}
+div.ftrWrap>div.footer>div>p{}
+div.ftrWrap>div.footer>ul{}
+div.ftrWrap>div.footer>ul>li{}

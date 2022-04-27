@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 150px auto;
+            overflow: hidden;
+        }
+        div.artView>div.thumbView{
+            width: 100%;
+            height: 500px;
+            background-image: url('./images/cnt01_pic01.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.5s;
+        }
+        div.artView>div.thumb{
+            width: 100%;
+            margin-top: 20px;
+        }
+        div.artView>div.thumb>ul.thumbGroup{
+            width: 133.33%;
+        }
+        div.artView>div.thumb>ul.thumbGroup::after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li{
+            width: calc(100% / 8 - 20px);
+            margin: 0 10px;
+            height: 100px;
+            float: left;
+            filter: grayscale(1);
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(1){
+            background-image: url('./images/cnt01_pic01.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: grayscale(0);
+            border: 4px solid red;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(2){
+            background-image: url('./images/cnt01_pic02.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(3){
+            background-image: url('./images/cnt01.pic03.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(4){
+            background-image: url('./images/cnt02_pic01.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(5){
+            background-image: url('./images/cnt02_pic02.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(6){
+            background-image: url('./images/cnt02_pic03.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(7){
+            background-image: url('./images/plc01.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(8){
+            background-image: url('./images/plc02.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var i = 0;
+            var g = 0;
+            
+            $('.thumbGroup>li').click(function(){
+                var img = $(this).css('background-image');
+                // 누른 그 자체의 이미지 값을 추출해서
+                $('.thumbView').css('background-image',img);
+                // 썸뷰에 그 이미지 값을 적용시켜줌
+                $('.thumbGroup>li').css('filter','grayscale(1)');
+                $('.thumbGroup>li').css({
+                    filter: 'grayscale(1)',
+                    border: '0'
+                });
+                $(this).css({
+                    filter: 'grayscale(0)',
+                    border: '4px solid red'
+                    })
+                var ind = $(this).index();
+                g = ind;
+                if(g > 0 && g < 7){
+                    $('button').css('opacity','1');
+                }else if((g > 0 && g <= 6)){
+                    
+                }
+            });        
+
+            // 왼쪽버튼
+
+            $('button').eq(0).click(function(){
+                
+                g--;
+                
+                if(g<=0){
+                    g=0;
+                }
+                
+                if(g == 0){
+                    $(this).css('opacity','0');
+                }else {
+                    $('button').eq(1).css('opacity','1');
+                }
+
+                i--;
+                
+                if(i<=0){
+                    i=0;
+                }
+                var img = $('.thumbGroup>li').eq(g).css('background-image');
+                $('.thumbView').css('background-image',img);
+                $('.thumbGroup').css('margin-left',i * -16.6+'%');
+                $('.thumbGroup>li').css({
+                    filter: 'grayscale(1)',
+                    border: '0'
+                });
+                $('.thumbGroup>li').eq(g).css({
+                    filter: 'grayscale(0)',
+                    border: '4px solid red'
+                    })
+                
+            });     
+
+
+            // 오른쪽버튼
+            $('button').eq(1).click(function(){
+                g++;
+                
+                if(g>=7){
+                    g=7;
+                }
+                $('.thumbGroup').css('margin-left',i * -16.6+'%'); 
+                $('.thumbGroup>li').css({
+                    filter: 'grayscale(1)',
+                    border: '0'
+                });
+                $('.thumbGroup>li').eq(g).css({
+                    filter: 'grayscale(0)',
+                    border: '4px solid red'
+                    })
+                
+
+                
+                console.log(g)
+
+                if(g == 7){
+                    $(this).css('opacity','0');  
+                }else{
+                    $('button').eq(0).css('opacity','1');
+                }
+                
+                i++;
+                
+                if(i>2){
+                    i=2;
+                }
+                var img = $('.thumbGroup>li').eq(g).css('background-image');
+                $('.thumbView').css('background-image',img); 
+            }); 
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="thumbView"></div>
+        <div class="thumb">
+            <ul class="thumbGroup">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <button>left</button>
+    <button>right</button>
+</body>
+</html>

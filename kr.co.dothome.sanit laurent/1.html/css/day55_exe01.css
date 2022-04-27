@@ -1,0 +1,73 @@
+
+.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 150px auto;
+}
+section{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.artGroup{
+    width: 500%;
+    display: flex;
+    justify-content: space-between;
+}
+article{
+    width: calc(100% / 5);
+}
+.image{
+    height: 500px;
+    color: #fff;
+    font-size: 42px;
+}
+.image.i1{
+    background-color: black;
+}
+.image.i2{
+    background-color: red;
+}
+.image.i3{
+    background-color: blue;
+}
+.image.i4{
+    background-color: green;
+}
+.image.i5{
+    background-color: yellow;
+}
+.paging{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.paging li{
+    width: 20px;
+    height: 20px;
+    background-color: darkgray;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+li.show{
+    width: 40px;
+}
+.btns{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.btn{
+    font-size: 40px;
+}

@@ -1,0 +1,64 @@
+청보처리 산업기사 << 자격증 필요 산업기사는 3년 커리어, 기사는 5년커리어 인정
+퍼블리셔는 단가라는 게 중요하고 그걸 올려야함
+
+
+Css
+
+open in brower
+인스톨 후 
+
+div.header> div.logo
+div.header>div.nav
+
+
+div.header>div.logo
+   부모         자식
+
+head 태그에서
+style 이라는 태그를 씀
+예시
+<style>
+        /* 선택자:: 1번척추,2번척추 */
+        div.mnTopWrap {
+            /* 스타일 내용 */
+            width: 1000px;
+            height: 500px;
+            background-color: #fc0;
+        }
+{   내용  } < 중가로를 써야함
+
+<link rel="stylesheet" href=""> < link + tap
+
+/ 방 안에서 밖으로 찾는 ./ 방 안에서 찾는 ../ 밖에서 방으로 찾는
+
+html
+
+H는 제목태그라는 애임
+완전 큰 제목부터 작은 제목까지
+1부터 6까지 넣을 수 있다
+
+H1(사이트 이름)이 제일 메인이 되는 제목
+H1 안에 로고를 넣어줌
+
+H1은 사이트 이름으로 쓰는게 대표적
+H2부터는 타이틀들  H6까지 있는 거 중요
+그리고 H1 H2 H3 H4 ... 단위는 크기에 따라 씀
+그리고 id < 태그 빼고는 아무리 사용해도 괜찮음
+
+모든 텍스트 박스는 P태크라는 것의 안에 넣어야함
+
+
+폰트어썸에서 가져온 i태그는 
+그냥 텍스트랑 동일하다.
+
+<i class="fab fa-facebook-square"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-twitter"></i>
+
+폰트어썸에서 start for free 누르고 들어가서
+오더 웨이 투 유즈에서 다운로드 누르고
+다운로드 후 알집 파일에서 웹폰츠 파일 html 파일문서로 옮기고
+css 들어가서 all 파일 css 내 파일로 옮기기
+오후 1:17 2022-01-27오후 1:17 2022-01-27
+
+

@@ -1,0 +1,273 @@
+/* 헤더 */
+
+
+div.hdrWrap{
+    background-color: #2c2c2c;
+}
+div.hdrWrap>div.header::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.hdrWrap>div.header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    line-height: 80px;
+    color: #fff;
+    text-transform: capitalize;
+}
+div.hdrWrap>div.header>h1{
+    float: left;
+    font-size: 30px;
+}
+div.hdrWrap>div.header>ul.nav{
+    float: right;
+}
+div.hdrWrap>div.header>ul.nav::after{
+    clear: both;
+    content: '';
+    display: block;
+}
+div.hdrWrap>div.header>ul.nav>li{
+    float: left;
+    font-size: 24px;
+    margin-left: 50px;
+}
+
+
+/* 메인 */
+div.mainWrap{
+    background-color: #535353;
+}
+div.mainWrap>div.main{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 640px;
+}
+
+/* 컨텐츠 공통 */
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 30px;
+    line-height: 80px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+/* 컨텐츠1 */
+div.cntWrap>div.content.cnt01{
+    margin-top: 80px;
+}
+div.cntWrap>div.content.cnt01>div.header{
+    text-align: center;
+}
+div.cntWrap>div.content.cnt01>div.header>p{
+    width: calc(100% / 12 * 5);
+    margin: 0 auto;
+}
+div.cntWrap>div.content.cnt01>div.section{
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView{
+    width: 100%;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup{
+    width: 200%;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article{
+    width: calc(100% / 12 - 20px);
+    margin: 0 10px;
+    float: left;
+    height: 200px;
+    background-color: #585858;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article.i3{
+    height: 240px;
+    margin-top: 0;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article.i4{
+    height: 240px;
+    margin-top: 0;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article.i9{
+    height: 240px;
+    margin-top: 0;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artView>div.artGroup>div.article.i10{
+    height: 240px;
+    margin-top: 0;
+}
+div.cntWrap:nth-child(4){
+    background-color: #000;
+}
+div.cntWrap>div.content.cnt02{
+    padding-bottom: 80px;
+    margin-top: 80px;
+}
+div.cntWrap>div.content.cnt02>div.header{
+    text-align: left;
+    color: #fff;
+}
+div.cntWrap>div.content.cnt02>div.section::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.cntWrap>div.content.cnt02>div.section{
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article{
+    width: calc(100% / 4 - 20px);
+    margin: 0 10px;
+    float: left;
+    height: 400px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image{
+    height: 320px;
+    background-color: #fff;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.text{
+    height: 0px;
+    color: #fff;
+    background-color: #999;
+    font-size: 24px;
+    line-height: 80px;
+    text-align: center;
+    overflow: hidden;
+    transition: height 1s;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article:hover>div.text{
+    height: 80px;
+}
+div.cntWrap>div.content.cnt03{
+    margin-top: 80px;
+}
+div.cntWrap>div.content.cnt03>div.header>p{
+    width: calc(100% / 12 * 8);
+    font-size: 14px;
+    line-height: 20px;
+    height: 40px;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt03>div.section::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.cntWrap>div.content.cnt03>div.section{
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article{
+    float: left;
+    background-color: #aaaaaa;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article.i1{
+    width: calc(100% / 12 * 3);
+    height: 400px;
+    background-color: #e0e0e0;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article.i1>div.texts{
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article.i1>div.texts>h3{
+    line-height: 80px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 700;
+    font-size: 26px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article.i1>div.texts>p{
+    width: calc(100% / 3 * 2);
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 20px;
+    height: 240px;
+    overflow: hidden;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article.i2{
+    width: calc(100% / 12 * 3 - 20px);
+    margin: 0 20px;
+    height: 220px;
+    background-color: #aaaaaa;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article.i3{
+    width: calc(100% / 12 * 6 - 20px);
+    height: 220px;
+    
+}
+div.cntWrap>div.content.cnt03>div.section>div.article.i4{
+    width: calc(100% / 12 * 9 - 20px);
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 160px;
+}
+div.ftrWrap{
+    margin-top: 80px;
+    background-color: #000;
+    color: #fff;
+}
+div.ftrWrap>div.footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+div.ftrWrap>div.footer::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.ftrWrap>div.footer>h1{
+    margin-top: 40px;
+    width: calc(100% / 12 * 2);
+    text-align: left;
+    font-size: 30px;
+    line-height: 40px;
+    float: left;
+}
+div.ftrWrap>div.footer>div.info{
+    float: left;
+    width: calc(100% / 12 * 8);
+}
+div.ftrWrap>div.footer>div.info>ul.inTop::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.ftrWrap>div.footer>div.info>ul.inTop>li{
+    float: left;
+    line-height: 40px;
+    font-size: 12px;
+    margin-right: 20px;
+}
+div.ftrWrap>div.footer>div.info>ul.inBtm{
+    margin-top: 30px;
+}
+div.ftrWrap>div.footer>div.info>ul.inBtm>li>p{
+    line-height: 20px;
+    height: 80px;
+    text-align: left;
+    font-size: 12px;
+}
+div.ftrWrap>div.footer>div.sns{
+    float: right;
+    margin-top: 80px;
+    font-size: 40px;
+    line-height: 40px;
+}

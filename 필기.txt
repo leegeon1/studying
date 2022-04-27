@@ -1,0 +1,263 @@
+0faid in과 faid out을 통해서 무한루프 슬라이드를 만들고
+이 faid in은 01234 5개의 슬라이드 li가 있을 때 0을 4의 뒤로 보내주고
+faid out은 4를 0앞으로 보내줌 이런 원리임
+
+함수 사용할 때 .fadeOut() < 이렇게 작성하고 그 안에 1s 이런식이 아니라 밀리세컨드라서
+500 < 이런식으로 들어가야함 1000 1초 , 500 0.5초
+
+컨트롤 f5 하면 쿠키 메모리 날려줌
+
+pre - < 전에라는 뜻
+
+js animate = css animation
+
+6 1 2 3 4 5
+ 뷰를 1에 맞추고 마진 레프트를 준다.
+뷰는 항상 고정시키고 그 안에서 슬라이드들이 움직인다.
+
+
+슬라이드 넘어갈 때 제동을 걸어주는 이벤트 함수
+
+var events = 'webkitTransitionEnd otransitionend 
+oTransitionEnd msTransitionEnd transitionend';
+
+0405
+
+  function leftSlide(){ 이 함수에 들어가는 값과
+  leftSilde(); 값은 따로 적용되고
+  leftSilde(여기안에 값을 입력하고 ex 5);
+  function leftSlide(maxnum) 하면 그 5의 값이 적용돼서
+  그 밑에 함수들에게도 maxnum값으로 바꿔주면 그 바꿔준 값이
+  치환돼서 그 밑에 함수들에게도 적용됨
+
+콜백함수로 들어갈 땐 소가로 없어도 되고
+left.click(leftSlide); 이렇게
+
+바깥에서 들어갈 땐 소가로 필요
+leftSilde();
+
+setTimeout(leftSlide, 500);
+
+
+
+
+
+
+0406
+
+
+
+트렌지션은 변경되기 전 요소에게 줘야함
+변경 된 후에 주면 변경되기 전으로 돌아갈 때 적용이 안됨
+
+
+
+
+
+
+0407
+
+
+시멘틱태그와 css 심화과정
+
+
+시맨틱태그
+자동완성 되는 것들만 가능 // 왜 ? = 약속된 거기 때문에
+nav = 네비게이션
+hdr = header = 헤더
+main = 메인
+section = 컨텐츠에 섹션
+footer = 푸터
+
+svg 태그 
+
+드디어 flex 들어간다
+flaot과 다르게 flex는 부유가 안됨
+flex는 요소를 감싸고 있는 부모한테 줘야함
+flex는 각 요소가 갖고있는 너비를 계산함
+이걸 사요아면
+
+
+justify-content : space-between; 
+justify-content : space-around;
+
+너비에 따라서 그리드 양 옆 너비를 없애거나 유지하거나
+
+
+
+0408
+
+direction ltr 레프트를 라이트로
+direction rtl 라이트를 레프트로
+디렉션은 그 하위요소를 바꿔줌
+
+    min-width: calc((100vw - 80vw) / 2 + 100%); 
+ width의 최소값 100vw 에서 80vw 뺀 나머지값을 2 + 100% 만큼 나눠주고
+그 값만큼 줄어들지 않게 고정해줌 
+
+flex-wrap:wrap 
+부모 넓이보다 요소들의 총 넓이가 크다면 나머지 요소들을 다음줄로
+바꿔줌
+
+float으로 오버그리드 하려면
+direction 써보고 안되면
+마진 레프트로..
+
+
+
+
+0411
+
+https://bennettfeely.com/clippy/
+여기서 이미지나 도형 모양 css 로 쓸 수 있음
+
+지도에서 html 따온 뒤에 넣을 div에 넣으면 
+적용됨 
+
+
+
+
+
+0412
+
+rotate 는 deg로 수치를 적용
+
+backface-visibility: hidden;
+뒷면을 안 보여주게 하는 css 요소
+
+
+perspective 원근감
+픽셀 단위로 사용함 100px 사용하면 눈 앞에서
+돌아가는 느낌 1000px은 좀 멀리 간 느낌이다
+이거는 해보면서 적용시켜야할듯
+텍스트가 0일때는 이미지가 180deg여야지 
+한쪽을 사라지게 표현 가능함
+
+웹접근성을 위해 비어있는 div는 없어야함
+
+
+
+
+
+0414
+
+반응형 height 쓰는 거
+vw 는 가로사이즈 vh는 세로 사이즈
+vh는 쓸 수가 없다 height 퍼센트로도 사용 못함
+view에 전체 높이를 픽셀로 잡아야지 vh도 퍼센트도 사용 가능하다. ( 변수가 많음 그래서 안씀)
+그래서 width값 기준으로 가져와야한다 비율을 맞춰야 하기 때문에
+
+줄였을 때 500px 600px까진 문제가 없어야함
+
+
+100vw는 device의 width임
+vw의  80% = 1080px
+1080px / 80% = 1350px
+1350px 80% 는 1080px
+1350 / 40px 은 2.96 반올림 해서 3으로 잡고
+한칸당 40px이고 3vw이라는 이야기임
+즉 이게 너비(width)기준으로 잡은거고
+한칸은 3vw
+
+ex 5칸을 사용하고싶다 
+15vw 인데 이거를 계속 계산을 하기 힘듦
+그래서 기준으로 만들어버리는 거임
+높이 한칸은 3vw라고 기준 만들고
+html의 첫 시작은 html 태그
+html으로 첫 기준을 잡아야함 3vw로
+html에 폰트사이즈 기준을 3vw로 잡음
+그러니까 즉 한칸을 3vw로 만들기 위해서
+이런 작업을 거침 왜냐하면 기준이 있어야 하기 때문에
+
+rem
+html의 기본 폰트 사이즈
+16px
+
+em은 
+body의 기본 폰트 사이즈
+12px
+
+html, body 두개 다 기준을 잡아야함
+rem,  em으로
+
+html의 height 기준은 3vw 
+body의 폰트사이즈는  0.7vw임
+body의 폰트사이즈가 0.7vw인 이유는
+10px단위를 기준으로 잡아야 하기 때문에
+40px 3vw 인 html 기준으로
+3을 4로 환산하면 0.75고 그 기준으로
+0.7vw 0.5 뺀 값) 해서 body 의 10px 기준은 0.7이 됨
+그러니 즉 0.7vw 는 10px이고
+
+
+1rem height 한칸당 40px
+1em height 한칸당 10px
+
+min(10px, 50px)은
+둘 중에 더 작은 값을 가져오라는 거임
+
+
+그래서 정리를 해보자면
+view의 전체 width 값에서 height를 잡을거니까
+view의 전체 width 값 = 100vw 단위를 vw로 사용함
+그리고 우리가 사용하는 그리드 width 80% ,max-width 1080px
+1080px가 80% 가 되려면 100%의 width 값을 구해야함
+x = 1080px / 80% = 1350px
+x = 1350
+1350 / 40px = 2.96vw 반올림 해서 3vw로 적용 (대세의 지장없다)
+그러면 즉 그리드라인 칸당 3vw = 40px
+html{
+	font-size: 3vw;
+}
+ex 5칸을 사용하고싶다 
+15vw 인데 이거를 계속 계산을 하기 힘듦
+그래서 기준으로 만들어버리는 거임
+높이 한칸은 3vw라고 기준 만들고
+html의 첫 시작은 html 태그
+html으로 첫 기준을 잡아야함 3vw로
+html에 폰트사이즈 기준을 3vw로 잡음
+그러니까 즉 한칸을 3vw로 만들기 위해서
+이런 작업을 거침 왜냐하면 기준이 있어야 하기 때문에
+body{
+	font-size:0.7vw;
+}
+html의 height 기준은 3vw 
+body의 폰트사이즈는  0.7vw임
+body의 폰트사이즈가 0.7vw인 이유는
+10px단위를 기준으로 잡아야 하기 때문에
+40px 3vw 인 html 기준으로
+3을 4로 환산하면 0.75고 그 기준으로
+0.7vw 0.5 뺀 값) 해서 body 의 10px 기준은 0.7이 됨
+그러니 즉 0.7vw 는 10px이고
+
+
+예시)
+    line-height: min(40px,1rem);
+높이에는 rem 단위를 쓰고
+폰트 사이즈에는
+em 단위를 적용시켜줌
+    font-size: min(1.6em,16px);
+
+그리고 min값을 사용하는 이유는 디바이스의 width랑 height가 각각 다르기 때문에
+일정 이상이 될 때 그 이상으로 커지지 않게 제한을 두려고 사용함 
+min(1rem,40px) 즉 1rem의 단위는 width값에 대입이 돼서 변하는 값이지만
+40px 픽셀은 고정된 단위기 때문에 그 이상으로 갈 땐 40px로 적용이 되게 만들어서
+내가 만든 그리드라인과 페이지가 깨지지 않게 유지시켜줌.
+
+
+
+0415
+
+높이를 안주고 css 구현하는 방법 2개
+display grid
+padding
+그리드를 사용하는 이유 비율을 맞추기 위해서.
+
+반응형 > divice의 웹사이트 비율이 깨지지 않아야하고
+그러려면 비율이맞아야함
+
+
+
+
+
+

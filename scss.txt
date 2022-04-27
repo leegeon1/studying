@@ -1,0 +1,114 @@
+0418
+
+sass scss less 
+사용하는 방법은 똑같음
+
+확장 프로그램 다운 받아야함
+live sass 눈 모양 다운로드 하면 됨
+그리고 scss 사용하면 
+css에서 바꾸면 안됨 scss 에서 수정해야함
+
+scss 호버나 이런거 사용하려면
+.btn{
+                    margin-top: 40px;
+                    background-color: #333;
+                    color: black;
+                    margin-left: auto;
+                    width: calc(100% / 4);
+                    text-align: center;
+                    font-size: 30px;
+                    line-height: 40px;
+                    transition: all 0.5;
+                    &:hover{
+                        background-color: #fc2;
+                        color: #fff;
+                        transition: all 0.5s;
+                    }
+이런식으로 .btn{소가로 안에 선택자 대신 &를 넣어주면 됨
+.btn:hover 말고 &:hover 이렇게}
+
+scss를 사용하는 이유
+미니마이즈가 가능함
+
+면접시 속도개선을 위해 무엇을 했나요? 라고 물어보면
+css를 미니마이즈화 시켜서 속도를 개선시켰습니다.
+
+live sass 들어가서 설정 들어간 후에 확장설정에서
+format 이라고 적힌 거 들어가서 js 
+맨 밑에 {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": null
+        }
+이걸로 바꿔줌
+그리고 css link 를 min 파일로 적용시키면 됨
+
+그리고 밑에 sass watching 시켜주면 min파일 나오는데
+그걸로 미니마이즈화 된 css html에 적용시켜주면 됨
+
+
+0419
+
+scss에서는 자바스크립트를 넣을 수 있음
+$ttFz:16px; 16px의 값을 가진 변수를
+font-size: ttfz; 이렇게 쓰면 16px이 적용됨
+
+for문 공식
+@for $img from 1 through 3{
+                            &.i#{$img}{
+                                background-image: url('../images/test_pic0#{$img}.jpg');
+                            }
+                        } 
+0420
+
+규칙이 있는게 아니라 강제로 끼워넣는 거라서
+어퍼스트로피 넣어야함
+
+$lh:#{'min(1rem,40px)'}; 이런식ㅇ,로
+중가로 값을 넣어줘야함
+
+function today( ){
+    위를 scc 버전으로하면
+
+scss ver 
+
+@mixin
+@include 
+
+이 두개는 항상 세트로감
+
+@mixin grid{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+@include gird;
+
+이런식으로 그리드라는 변수 안에 값을 넣어두면
+인클루드를 통해 그 모든 값을 저 변수 하나로 사용가능
+header{
+        color: #fff;        
+        @include gird;
+        display: flex;
+        justify-content: space-between;
+        }
+이런식
+
+0421
+
+@mixin 도 파라미터 값을 적용시킬 수 있다.
+@mixin grid ( ){ } if 문을 통해
+반응형 웹의 그리드 라인을 적용시킴
+
+0422
+
+@mixin은 안에 있는 내용만 들고옴
+변수랑 같다고 보면됨 근데 변수랑 다르게
+여러가지를 넣을 수 있음
+
+bgc: rgba(0,0,0,0); 마지막 0은 투명도를 조절함
+세부적으로 백그라운드 배경 색을 조절할 수 있음
+
+
+
+

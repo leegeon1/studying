@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        /* div.top>button:nth-child(odd){
+            background-color: blue;
+        }
+        div.top>button:nth-child(even){
+            background-color: red;
+        } */
+        /* div.top>button{
+            background-color: ;
+        } */
+        button{
+            background-color: #fc2;
+            transition: all 0.5s;
+            font-size: 12px;
+        }
+        /* button.show{
+            background-color: orange;
+            font-size: 42px;
+        } */
+    </style>
+    <script>
+        $(function(){
+            // $('div.top>button').eq(1).last().prev().click(function(){
+            //     alert('탑버튼1이 클릭된 상황입니다.');
+            
+            // });
+            // $('div.btm>button').first().last().next().click(function(){
+            //     alert('바텀버튼 두번째 버튼입니다.')
+            // });
+
+            // $('button').click(function(){
+            //     $(this).css('background-color','orange');
+            // });
+            
+            // $(this).css({
+                //     backgroundColor:'orange',
+                //     'font-size':'48px',
+                //     'color':'red',
+                //     'font-weight':'700'
+                // });
+                $('button').click(function(){
+                    // $('button').removeClass('show');
+                    // $(this).addClass('show');
+                    $('button').css({
+                        backgroundColor: '#fc2',
+                        fontSize: '12px',
+                        color: '#000'
+                    });
+                    $(this).css({
+                        backgroundColor:'blue',
+                        color:'red',
+                        fontSize:'40px'                      
+                    });
+                    // $(this).addClass.css('show')({
+                    //     backgroundColor:'blue',
+                    //     color:'red',
+                    //     fontSize:'40px'
+                    // });
+                    
+            });
+            
+            // $('div.btm>button').even().click(function(){
+                
+            // });
+        });
+    </script>
+</head>
+<body>
+    <div class="top">
+        <button>탑버튼1</button>
+        <button>탑버튼2</button>
+        <button>탑버튼3</button>
+    </div>
+    <div class="btm">
+        <button>바텀버튼1</button>
+        <button>바텀버튼2</button>
+        <button>바텀버튼3</button>
+    </div>
+</body>
+</html>

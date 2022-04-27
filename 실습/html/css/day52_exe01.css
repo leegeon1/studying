@@ -1,0 +1,78 @@
+.cntWrap{
+    margin-top: 160px;
+    padding-bottom: 160px;
+}
+.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+header{
+    width: calc(100% / 12 * 5);
+    padding-left: 20px;
+}
+
+header h2{
+    text-transform: capitalize;
+    font-weight: 700;
+    line-height: 80px;
+    font-size: 36px;
+}
+header p{
+    line-height: 20px;
+    height: 40px;
+    font-size: 14px;
+    overflow: hidden;
+}
+section{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+article{
+    width: calc(100% / 12 * 5 - 20px);
+}
+article:nth-child(2){
+    width: calc(100% / 12 * 7 - 20px);
+}
+article:nth-child(1){
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+}
+.image{
+    width: 100%;
+}
+.ovrGrid{
+    width: calc((100vw - 1080px) / 2 + 100%);
+    min-width: calc((100vw - 80vw) / 2 + 100%);
+    height: 440px;
+    background-color: #555;
+}
+.image.i1{
+    direction: rtl;
+    margin-top: 40px;
+}
+.texts{
+    padding-left: 20px;
+    margin-top: 40px;
+}
+article:nth-child(1) .texts{
+    margin-top: 0;
+}
+.texts h3{
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.texts p{
+    width: calc(100% / 5 * 4.5);
+    font-size: 14px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+}
+.texts p:nth-child(2){
+    width: calc(100% / 7 * 6);
+}

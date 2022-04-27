@@ -1,0 +1,241 @@
+div.section{
+    width: 80%;
+    max-width: 1080px;
+    margin: 150px auto;
+    overflow: hidden;
+    height: 500px;
+    position: relative;
+}
+div.section>div.artView{
+    width: 100%;
+    transition: all 1s;
+}
+div.section>div.artView>div.artGroup{
+    width: 100%;
+}
+div.section>div.artView>div.artGroup::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.section>div.artView>div.artGroup>div.article{
+    height: 500px;
+    width: 100%;
+    float: left;
+}
+div.section>div.artView>div.artGroup>div.article:nth-child(1){
+    background-color: #000;
+}
+div.section>div.artView>div.artGroup>div.article:nth-child(2){
+    background-color: orange;
+}
+div.section>div.artView>div.artGroup>div.article:nth-child(3){
+    background-color: red;
+}
+div.section>div.artView>div.artGroup>div.article:nth-child(4){
+    background-color: blue;
+}
+div.section>div.artView>div.artGroup>div.article:nth-child(5){
+    background-color: green
+}
+div.section>button{
+    width: calc(100% / 12);
+    position: absolute;
+    z-index: 0;
+    top: 460px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+}
+div.section>button:nth-child(2){
+    width: calc(100% / 12);
+    position: absolute;
+    z-index: 0;
+    top: 460px;
+    left: calc(100% / 12);
+    bottom: 0;
+    right: 0;
+}
+div.cntWrap>ul.paging{
+    width: 20%;
+    height: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 300px;
+    left: 100px;
+}
+div.cntWrap>ul.paging>li.show{
+    height: 30px;
+}
+div.cntWrap>ul.paging>li{
+    width: 20px;
+    height: 20px;
+    background-color: #fc2;
+    margin: 20px 20px;
+    border-radius: 10px;
+}
+/* 인덱스 슬라이드 */
+div.cntWrap>div.indSilde{
+    width: 80%;
+    max-width: 1080px;
+    margin: 150px auto;
+    overflow: hidden;
+}
+div.cntWrap>div.indSilde>div.sildeView{
+    width: 100%;
+    transition: all 1s;
+}
+div.cntWrap>div.indSilde>div.sildeView>div.sildeGroup{
+    width: 500%;
+}
+div.cntWrap>div.indSilde>div.sildeView>div.sildeGroup::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.cntWrap>div.indSilde>div.sildeView>div.sildeGroup>div.article{
+    height: 250px;
+    width: calc(100% / 5);
+    float: left;
+}
+div.cntWrap>div.indSilde>div.sildeView>div.sildeGroup>div.article:nth-child(1){
+    background-color: black;
+}
+div.cntWrap>div.indSilde>div.sildeView>div.sildeGroup>div.article:nth-child(2){
+    background-color: red;
+}
+div.cntWrap>div.indSilde>div.sildeView>div.sildeGroup>div.article:nth-child(3){
+    background-color: blue;
+}
+div.cntWrap>div.indSilde>div.sildeView>div.sildeGroup>div.article:nth-child(4){
+    background-color: green;
+}
+div.cntWrap>div.indSilde>div.sildeView>div.sildeGroup>div.article:nth-child(5){
+    background-color: yellow;
+}
+/* 썸네일 제작 */
+div.cntWrap>div.thumbnail{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.thumbnail>div.thumbView{
+    height: 500px;
+    width: 100%;
+    background-image: url('../images/plc01.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.cntWrap>div.thumbnail>div.thumbnails{
+    width: 100%;
+    margin-top: 20px;
+}
+div.cntWrap>div.thumbnail>div.thumbnails:after{
+    clear: both;
+    display: block;
+    content: '';
+}
+div.cntWrap>div.thumbnail>div.thumbnails>div.article{
+    height: 100px;
+    width: calc(100% / 5 - 20px);
+    margin: 0 10px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.cntWrap>div.thumbnail>div.thumbnails>div.article:nth-child(1){
+    background-image: url('../images/plc01.jpg');
+}
+div.cntWrap>div.thumbnail>div.thumbnails>div.article:nth-child(2){
+    background-image: url('../images/plc02.jpg');
+}
+div.cntWrap>div.thumbnail>div.thumbnails>div.article:nth-child(3){
+    background-image: url('../images/cnt01_pic01.jpg');
+}
+div.cntWrap>div.thumbnail>div.thumbnails>div.article:nth-child(4){
+    background-image: url('../images/cnt01_pic02.jpg');
+}
+div.cntWrap>div.thumbnail>div.thumbnails>div.article:nth-child(5){
+    background-image: url('../images/cnt01.pic03.jpg');
+}
+/* 썸네일 슬라이드 */
+div.cntWrap>div.thumbSilde{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 150px;
+    overflow: hidden;
+}
+div.cntWrap>div.thumbSilde>div.thumbArtView{
+    width: 500%;
+    background-image: url('../images/plc01.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: margin-left 1s;
+}
+div.cntWrap>div.thumbSilde>div.thumbArtView::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.cntWrap>div.thumbSilde>div.thumbArtView>div.article{
+    width: calc(100% / 5);
+    height: 500px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.cntWrap>div.thumbSilde>div.thumbArtView>div.article:nth-child(1){
+    background-image: url('../images/plc01.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtView>div.article:nth-child(2){
+    background-image: url('../images/plc02.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtView>div.article:nth-child(3){
+    background-image: url('../images/cnt01_pic01.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtView>div.article:nth-child(4){
+    background-image: url('../images/cnt01_pic02.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtView>div.article:nth-child(5){
+    background-image: url('../images/cnt01.pic03.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtnails{
+    width: 100%;
+    margin-top: 20px;
+    
+}
+div.cntWrap>div.thumbSilde>div.thumbArtnails::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.cntWrap>div.thumbSilde>div.thumbArtnails>div.article{
+    height: 100px;
+    width: calc(100% / 5 - 20px);
+    margin: 0 10px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.cntWrap>div.thumbSilde>div.thumbArtnails>div.article:nth-child(1){
+    background-image: url('../images/plc01.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtnails>div.article:nth-child(2){
+    background-image: url('../images/plc02.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtnails>div.article:nth-child(3){
+    background-image: url('../images/cnt01_pic01.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtnails>div.article:nth-child(4){
+    background-image: url('../images/cnt01_pic02.jpg');
+}
+div.cntWrap>div.thumbSilde>div.thumbArtnails>div.article:nth-child(5){
+    background-image: url('../images/cnt01.pic03.jpg');
+}

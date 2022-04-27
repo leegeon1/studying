@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/day52_exe03.css">
+    <style>
+        .btns{
+            display: flex;
+        }
+        .btn{
+            cursor: pointer;
+            font-size: 34px;
+            background-size: cover;
+        }
+        .nemo{
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // $('.btn').click(function(){
+            //     var col = $(this).attr('data-color');
+            //     $('.nemo').css({
+            //         backgroundColor : col
+            //     });
+            // });
+            $('.btn').click(function(){
+                var img = $(this).attr('data-img');
+                $('.nemo').css({
+                    backgroundImage : img,
+                    backgroundSize : 'cover'
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- <div class="btns">
+        <div class="btn" data-color="red">빨강</div>
+        <div class="btn" data-color="blue">파랑</div>
+        <div class="btn" data-color="yellow">노랑</div>
+        <div class="nemo"></div>
+    </div> -->
+    <div class="btns">
+        <div class="btn" data-img=" url('./images/content3_art1.jpg')">버튼1</div>
+        <div class="btn" data-img=" url('./images/content3_art2.jpg')">버튼2</div>
+        <div class="btn" data-img=" url('./images/content3_art3.jpg')">버튼3</div>
+        <div class="nemo"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var student,grade = '';
+        
+        // student = prompt('학생명을 입력하세요.');
+        // console.log(student+'님, 한영합니다.');
+        
+
+        // grade = prompt('몇학년 인지 입력하세요.');
+        // console.log(student+'님은'+grade+'에서 입력받은 학년입니다.');
+
+        // var info = [prompt('이건'),prompt('사과')];
+        // console.log(info[0]+'님이 좋아하는 음식은'+info[1]+'입니다.');
+
+        // var fruit = [prompt('과일1'),prompt('과일2'),prompt('과일3'),prompt('과일4'),prompt('과일5')];
+        // console.log('첫번째 과일 '+fruit[0]);
+        // console.log('두번째 과일 '+fruit[1]);
+        // console.log('세번째 과일 '+fruit[2]);
+        // console.log('네번째 과일 '+fruit[3]);
+        // console.log('다섯번째 과일 '+fruit[4]);
+
+        // var num1=parseInt(prompt('숫자를 입력해주세요!'));
+        // // var num2=parseInt(prompt('숫자를 입력해주세요!'));
+        // // alert(num1+'+'+num2+'='+(num1+num2));
+        // if(num1>=5){
+        //     alert('5입니다.');
+        // }
+            
+
+            // 조건문 ================================================================= //
+
+
+        // var age = (prompt('20세 미만이면 미성년자입니다.'));
+        // if(age<20){
+        //     alert('미성년자입니다.')
+        // }
+
+            // var num1 = Number(prompt('입력'));
+            // var num2 = Number(prompt('입력'));
+            // alert(num1+'+'+num2+'='+(num1+num2));
+            // var sum = prompt('입력');
+            // if(sum>10){
+            //     alert(num1+'과'+num2+'를 더한 값이 10이상입니다.');
+            // }
+
+            // var num = parseInt(prompt('숫자를 입력해주세요.'));
+            // if(num%2 == 0){
+            //     alert('짝수입니다.');
+            // }else if(num%2 == 1){
+            //     alert('홀수입니다.');
+            // }else{
+            //     alert('숫자를 입력해주세요.')
+            // }
+
+            // var gender = prompt('male,female 중 성별을 입력해주세요.')
+            // if(gender == 'male'){
+            //     alert('남성입니다.')
+            // }else if(gender == 'female'){
+            //     alert('여성입니다.')
+            // }else{
+            //     alert('male,female중 하나를 입력해주세요.')
+            // }
+
+
+            // var gender = prompt('male,female 중 성별을 입력해주세요.')
+            // switch(gender){
+            //     case 'male' : alert('남성입니다.');
+            //     break;
+            //     case 'female' : alert('여성입니다.');
+            //     break;
+            //     default: alert('male, female 중 하나만 입력하세요!.');
+            // }
+            // 스위치는 케이스 밑에 브레이크를 안 넣어주면 안 멈추고 계속 로직이 진행됨
+            
+            // var food = prompt('음식을 입력해주세요.');
+            // switch(food){
+            //     case '짜장면' : alert('당신이 좋아하는 요리는 중식입니다.');
+            //     break;
+            //     case '볶음밥' : alert('당신이 좋아하는 요리는 볶음밥입니다.');
+            //     break;
+            //     case '스테이크' : alert('당신이 좋아하는 요리는 양식입니다.');
+            //     break;
+            //     case '파스타' : alert('당신이 좋아하는 요리는 양식입니다.');
+            //     break;
+            //     case '우동' : alert('당신이 좋아하는 요리는 일식입니다.');
+            //     break;
+            //     case '초밥' : alert('당신이 좋아하는 요리는 일식입니다.');
+            //     break;
+            //     default: alert('짜장면, 볶음밥, 스테이크, 파스타, 우동, 초밥 중 하나를 입력해주세요.');
+            // }
+
+            // var food = prompt('음식을 입력해주세요.');
+            // switch(food){
+            //     case '짜장면' : alert('당신이 좋아하는 요리는 중식입니다.');
+            //     break;
+            //     case '볶음밥' : alert('당신이 좋아하는 요리는 볶음밥입니다.');
+            //     break;
+            //     case '스테이크' : alert('당신이 좋아하는 요리는 양식입니다.');
+            //     break;
+            //     case '파스타' : alert('당신이 좋아하는 요리는 양식입니다.');
+            //     break;
+            //     case '우동' : alert('당신이 좋아하는 요리는 일식입니다.');
+            //     break;
+            //     case '초밥' : alert('당신이 좋아하는 요리는 일식입니다.');
+            //     break;
+            //     default: alert('짜장면, 볶음밥, 스테이크, 파스타, 우동, 초밥 중 하나를 입력해주세요.');
+            // }
+
+            // if(food == '짜장면' || food == '볶음밥'){
+            //     alert('당신은 중식을 좋아합니다.');
+            // }else if(food == '스테이크' || food == '파스타'){
+            //     alert('당신은 양식을 좋아합니다.');
+            // }else if(food == '우동' || food == '초밥'){
+            //     alert('당신은 일식을 좋아합니다.');
+            // }else{
+            //     // alert('짜장면, 볶음밥, 스테이크, 파스타, 우동, 초밥 중 하나를 입력해주세요.');
+            // }
+
+            // var num1 = parseInt(prompt('숫자를 입력하세요.'));
+            // var num2 = parseInt(prompt('숫자를 입력하세요.'));
+            
+            // if((num1 % 2) == 0 && (num2 % 2) == 0){
+            //     alert('입력한 두 값 모두 짝수입니다.')
+            // }else if((num1 % 2) == 1 && (num2 % 2) == 1){
+            //     alert('입력한 두 값 모두 홀수입니다.')
+            // }else if((num1 % 2) == 0 && (num2 % 2) == 1){
+            //     alert(num1+'은 홀수입니다.')
+            // }else if((num1 % 2) == 1 && (num2 % 2) == 0){
+            //     alert(num2+'은 홀수입니다.')
+            // }else{
+            //     alert('숫자가 아닙니다.')
+            // }
+
+        // var num1 = Number(prompt('첫번째 숫자를 입력해주세요.'));
+        // var num2 = Number(prompt('두번째 숫자를 입력해주세요.'));
+        // if(num1%2==0 && num2%2==0){
+        //     alert('두 값 모두 짝수입니다.');
+        // };
+        // if(num1%2==1 && num2%2==1){
+        //     alert('두 값 모두 홀수입니다.');
+        // }
+        // if(num1%2==1 && num2%2==0){
+        //     alert('num1은 홀수입니다.');
+        // }
+        // if(num1%2==0 && num2%2==1){
+        //     alert('num2는 홀수입니다.');
+        // }
+        // else{
+        //     alert('숫자가 아닙니다.');
+        // }
+
+            // var i =0 ;
+            // while(i<5){
+            //     console.log('5보다 작은 수 입니다.');
+            //     i++;
+            // }
+
+        // var num1 = parseInt(prompt('숫자를 입력해주세요'));
+        // var num2 = parseInt(prompt('숫자를 입력해주세요'));
+
+        // if((num1%2) == 0 && (num2%2) == 0){
+        //     alert('입력한 두 값 모두 짝수입니다');
+        // }else if((num1%2) == 1 && (num2%2) == 1){
+        //     alert('입력한 두 값 모두 홀수입니다');
+        // }else if((num1%2) == 1 && (num2%2) == 0){
+        //     alert(num1+'은 홀수입니다.');
+        // }else if((num1%2) == 0 && (num2%2) == 1){
+        //     alert(num2+'은 홀수입니다.');
+        // }else{
+        //     alert('숫자가 아닙니다.')
+        // }
+            
+            
+            
+            
+
+    </script>
+
+
+
+
+</body>
+</html>

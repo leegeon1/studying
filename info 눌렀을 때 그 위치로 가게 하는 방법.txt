@@ -1,0 +1,19 @@
+1 무엇을 클릭 했을 때 > 액션
+2. 위치 px 값으로 환산했을 때 헤더부터 내가 찾는 
+컨텐츠나 배너의 정보
+
+offset < 사용
+
+$('header위치').load(url,fn 여기 안에 콜백 함수 사용 )
+로딩함수 자체가 html을 로딩해옴
+
+js jq의 가장 중요한 건 DOM탐색 
+DOM은 문서임
+스텐바이 하는 애들은 비동기처리
+
+Script에
+각 위치를 넣어줄 방을 생성
+var loc - [ ];
+for(var i=0; i <$(body<div').length; i++;){
+console.log('body<div'[ i ]); 
+}

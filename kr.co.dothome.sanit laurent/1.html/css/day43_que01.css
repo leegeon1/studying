@@ -1,0 +1,207 @@
+/* 아코디언 */
+div.cntWrap{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>ul>li:nth-child(odd){
+    width: 50%;
+    margin: 0 auto;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    font-weight: 700;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+}
+div.cntWrap>ul>li.show+li{
+    height: 80px;
+}
+div.cntWrap>ul>li:nth-child(even){
+    width: 50%;
+    height: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 70%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0px 80px;
+    transition: all 1s;
+}
+div.cntWrap>ul>li>p{
+    text-align: center;
+    overflow: hidden;
+    height: 40px;
+    margin-top: 20px;
+}
+/* 2번 문제 슬라이드 */
+div.cntWrap>div.content.cnt02{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup{
+    width: 1200%;
+    transition: all 1s;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article{
+    width: calc(100% / 36 - 20px);
+    margin: 0 10px;
+    height: 200px;
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(1){
+    background-color: red;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(2){
+    background-color: black;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(3){
+    background-color: blue;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(4){
+    background-color: green;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(5){
+    background-color: gray;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(6){
+    background-color: palegoldenrod;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(7){
+    background-color: chartreuse;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(8){
+    background-color: cyan;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(9){
+    background-color: darkkhaki;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(10){
+    background-color:  aquamarine;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(11){
+    background-color: blueviolet;
+}
+div.cntWrap>div.content.cnt02>div.sildeGroup>div.article:nth-child(12){
+    background-color: chocolate;
+}
+/* 3번문제 */
+div.content.cnt03{
+    width: 100%;
+    position: relative;
+}
+div.content.cnt03>div.indView{
+    width: 100%;
+    overflow: hidden;
+}
+div.content.cnt03>div.indView>div.indGroup{
+    width: 500%;
+}
+div.content.cnt03>div.indView>div.indGroup::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.content.cnt03>div.indView>div.indGroup>div.article{
+    width: calc(100% / 5);
+    height: 500px;
+    float: left;
+}
+div.content.cnt03>div.indView>div.indGroup>div.article:nth-child(1){
+    background-color: black;
+}
+div.content.cnt03>div.indView>div.indGroup>div.article:nth-child(2){
+    background-color: red;
+}
+div.content.cnt03>div.indView>div.indGroup>div.article:nth-child(3){
+    background-color: blue;
+}
+div.content.cnt03>div.indView>div.indGroup>div.article:nth-child(4){
+    background-color: green;
+}
+div.content.cnt03>div.indView>div.indGroup>div.article:nth-child(5){
+    background-color: purple;
+}
+div.content.cnt03>ul.paging::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.content.cnt03>ul.paging{
+    width: calc(100% / 6);
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    right: 0;
+}
+div.content.cnt03>ul.paging>li{
+    float: left;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    background-color: #fc2;
+    border-radius: 10px;
+}
+div.content.cnt03>ul.paging>li.gd{
+    width: 30px;
+}
+
+/* 4번 문제 */
+div.content.cnt04{
+    position: relative;
+}
+div.content.cnt04>div.indSlideview{
+    height: 500px;
+    overflow: hidden;
+}
+div.content.cnt04>div.indSlideview::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.content.cnt04>div.indSlideview>div.SlideGroup{
+    height: 2000px;
+    width: calc(100% / 3 - 20px);
+    margin: 0 10px;
+    float: left;
+    transition: margin-top 1s;
+}
+div.content.cnt04>div.indSlideview>div.SlideGroup>div.article{
+    width: 100%;
+    height: 500px;
+}
+div.content.cnt04>div.indSlideview>div.SlideGroup>div.article:nth-child(1){
+    background-color:  black;
+}
+div.content.cnt04>div.indSlideview>div.SlideGroup>div.article:nth-child(2){
+    background-color: red;
+}
+div.content.cnt04>div.indSlideview>div.SlideGroup>div.article:nth-child(3){
+    background-color: blue;
+}
+div.content.cnt04>div.indSlideview>div.SlideGroup>div.article:nth-child(4){
+    background-color: green;
+}
+div.content.cnt04>ul.sircle{
+    position: absolute;
+    left: 10px;
+    top: 150px;
+}
+div.content.cnt04>ul.sircle>li{
+    height: 20px;
+    width: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #fc2;
+}
+div.content.cnt04>ul.sircle>li.show{
+    height: 30px;
+}

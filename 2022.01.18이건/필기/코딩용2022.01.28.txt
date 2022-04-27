@@ -1,0 +1,31 @@
+html 일관성 있게 문서 구조를 작성할 수 있음
+css는 선택자를 명확하게 선택할 수 있음
+Java script는 DOM탐색을 정확히 할 수 있음
+
+
+div.article*4>div.image+div.texts 하면
+이렇게 네개 나옴
+
+
+<div class="article">
+            <div class="image"></div>
+            <div class="texts"></div>
+        </div>
+        <div class="article">
+            <div class="image"></div>
+            <div class="texts"></div>
+        </div>
+        <div class="article">
+            <div class="image"></div>
+            <div class="texts"></div>
+        </div>
+        <div class="article">
+            <div class="image"></div>
+            <div class="texts"></div>
+
+
+폰트어썸 연결하는 법 
+
+link + tap 해서 <link rel="stylesheet" href= 이거 확인하고 스타일쉬트 확인 후
+./ 해서 css 파일 들어가서 all 파일 넣으면 됨
+

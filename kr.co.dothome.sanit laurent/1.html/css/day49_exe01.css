@@ -1,0 +1,75 @@
+
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.section{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+div.cntWrap>div.content>div.section>div.article{
+    width: 600%;
+    height: 500px;
+    transition: margin-left 1s;
+}
+div.cntWrap>div.content>div.section>div.article>div.image{
+    width: calc(100% / 6);
+    height: 500px;
+    float: left;
+}
+div.cntWrap>div.content>div.section>div.article>div.image.i1{
+    background-color: red;
+}
+div.cntWrap>div.content>div.section>div.article>div.image.i2{
+    background-color: orange;
+}
+div.cntWrap>div.content>div.section>div.article>div.image.i3{
+    background-color: yellow;
+}
+div.cntWrap>div.content>div.section>div.article>div.image.i4{
+    background-color: green;
+}
+div.cntWrap>div.content>div.section>div.article>div.image.i5{
+    background-color: blue;
+}
+div.cntWrap>div.content>div.section>div.article>div.image.i6{
+    background-color: navy;
+}
+div.cntWrap>div.content>div.section>button{
+    height: 40px;
+}
+div.cntWrap>div.content>div.section>button:nth-child(2){
+    position: absolute;
+    top: 250px;
+    left: 0;
+}
+div.cntWrap>div.content>div.section>button:nth-child(3){
+    position: absolute;
+    top: 250px;
+    right: 0;
+}
+
+div.cntWrap>div.content>div.section>ul.paging::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.cntWrap>div.content>div.section>ul.paging{
+    position: absolute;
+    bottom: 40px;
+    left: 40%;
+}
+div.cntWrap>div.content>div.section>ul.paging>li{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    float: left;
+    margin-left: 10px;
+    border-radius: 10px;
+    transition: width 0.5s;
+}
+div.cntWrap>div.content>div.section>ul.paging>li.show{
+    width: 40px;
+}

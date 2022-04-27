@@ -1,0 +1,290 @@
+$ctFz:#{'min(3.6em,36px)'};
+$lh:#{'min(1rem,40px)'};
+$p:#{'min(1.2em,12px)'};
+$plh:#{'min(0.5rem,20px)'};
+$h3:#{'min(2.4em,24px)'};;
+$lifz:#{'min(1.4em,14px)'};
+$h4fz:#{'min(1.4em,14px)'};
+
+@mixin bg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@mixin grid{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+    }
+}
+
+
+.hdrWrap{
+    background-color: orange;
+    header{
+        color: #fff;        
+        @include gird;
+        display: flex;
+        justify-content: space-between;
+        h1{
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 700;
+            line-height: 80px;
+        }
+        nav{
+            width: calc(100% / 12 * 7);
+            text-transform: uppercase;
+            font-size: $h4fz;
+            line-height: #{min(2rem,80px)};
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+.mnTopWrap{
+    background-color: #666666;
+    padding: 40px 0px 40px;
+    .mnTop{
+        color: #fff;
+        @include gird;
+        display: flex;
+        justify-content: space-between;
+        .nav{
+            width: calc(100% / 12 * 6);
+            line-height: $lh;
+            li{
+                text-transform: capitalize;
+                &:nth-child(1){
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+.mainWrap{
+    background-color: #bfbfbf;
+    padding: 240px 0px 360px;
+    main{
+        @include gird;
+        h2{
+            font-size: 72px;
+            line-height: 80px;
+            text-transform: uppercase;
+        }
+        p{
+            margin-top: 40px;
+            line-height: $plh;
+            height: $lh;
+            width: calc(100% / 12 * 6);
+        }
+    }
+}
+.cntWrap{
+    margin-top: 120px;
+    .content.cnt01{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        header{
+            text-align: center;
+            h2{
+                font-size: $ctFz;
+                line-height: $lh;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            p{
+                width: calc(100% / 12 * 4);
+                overflow: hidden;
+                margin: 0 auto;
+                font-size: $p;
+                height: $lh;
+                line-height: $plh;
+            }
+        }
+        section{
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            article{
+                width: calc(100% / 4 - 20px);
+                .image{
+                    @include bg;
+                    height: #{'min(4.5rem,180px)'};
+                    @for $i from 1 through 4{
+                        &.i#{$i}{
+                            background-image: url('../images/test_pic0#{$i}.jpg');
+                        }
+                    }
+                }
+                .texts{
+                    padding: 20px 20px 0px 20px;
+                    h3{
+                        font-size: $h3;
+                        line-height: $lh;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                    }
+                    ul{
+                        line-height: $plh;
+                        font-size: $lifz;
+                        li{
+                            margin-top: 10px;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.bnrWrap{
+    margin-top: 120px;
+    background-color: #434243;
+    padding: 80px 0px 80px;
+    .banner{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        .image{
+            width: calc(100% / 6 - 20px);
+            margin: 0 10px;
+            border-radius: 50%;
+            height: #{'min(4rem,160px)'};
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            @for $img from 1 through 6{
+                &.i#{$img}{
+                    background-image: url('../images/test_pic0#{$img}.jpg');
+                }
+            } 
+        }
+    }
+}
+.cntWrap{
+    .content.cnt02{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        header{
+            text-align: center;
+            h2{
+                font-size: $ctFz;
+                line-height: $lh;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            p{
+                width: calc(100% / 12 * 4);
+                overflow: hidden;
+                margin: 0 auto;
+                font-size: $p;
+                height: $lh;
+                line-height: $plh;
+            }
+        }
+        section{
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            .artLeft{
+                width: calc(100% / 3);
+                article{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 40px;
+                    .image{
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        width: calc(100% / 4 * 0.9);
+                        height: 80px;
+                        border-radius: 50%;
+                        @for $img from 1 through 3{
+                            &.i#{$img}{
+                                background-image: url('../images/test_pic0#{$img}.jpg');
+                            }
+                        } 
+                    }
+                    .texts{
+                        width: calc(100% / 4 * 3);
+                        h3{
+                            font-size: $h3;
+                            line-height: $lh;
+                            text-transform: capitalize;
+                            font-weight: 700;
+                        }
+                        p{
+                            font-size: $p;
+                            line-height: $plh;
+                            height: $lh;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+            .artMid{
+                width: calc(100% / 3 - 40px);
+                margin: 0 20px;
+                .image{
+                    height: 400px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                    background-image: url('../images/bnrWrap.jpg');
+                }
+            }
+            .artRight{
+                width: calc(100% / 3);
+                article{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 40px;
+                    direction: rtl;
+                    .image{
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        width: calc(100% / 4 * 0.9);
+                        height: 80px;
+                        border-radius: 50%;
+                        @for $img from 1 through 3{
+                            &.i#{$img}{
+                                background-image: url('../images/test_pic0#{$img}.jpg');
+                            }
+                        } 
+                    }
+                    .texts{
+                        direction: ltr;
+                        text-align: right;
+                        width: calc(100% / 4 * 3);
+                        h3{
+                            font-size: $h3;
+                            line-height: $lh;
+                            text-transform: capitalize;
+                            font-weight: 700;
+                        }
+                        p{
+                            font-size: $p;
+                            line-height: $plh;
+                            height: $lh;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

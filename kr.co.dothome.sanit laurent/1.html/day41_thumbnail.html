@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day41_thumbnail.html</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.artView>div.thumbView{
+            width: 100%;
+            height: 500px;
+            background-image: url('./images/cat-g3793477df_1920.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: background-image 0.5s;
+        }
+        div.artView>div.thumb{
+            width: 100%;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        div.artView>div.thumb>ul.thumGroup{
+            width: 133.33%;
+        }
+        div.artView>div.thumb>ul.thumGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>div.thumb>ul.thumGroup>li{
+            width: calc(100% / 8 - 20px);
+            margin: 0px 10px;
+            height: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            float: left;
+            filter: grayscale(1);
+        }
+        div.artView>div.thumb>ul.thumGroup>li:nth-child(1){
+            background-image: url('./images/cat-g3793477df_1920.jpg');
+            filter: grayscale(0);
+            border: 4px solid #fc0;
+        }
+        div.artView>div.thumb>ul.thumGroup>li:nth-child(2){
+            background-image: url('./images/cat-g4af9a57be_1920.jpg');
+        }
+        div.artView>div.thumb>ul.thumGroup>li:nth-child(3){
+            background-image: url('./images/cat-g83b3139d4_1920.jpg');
+        }
+        div.artView>div.thumb>ul.thumGroup>li:nth-child(4){
+            background-image: url('./images/cat-gc79f7d49d_1920.jpg');
+        }
+        div.artView>div.thumb>ul.thumGroup>li:nth-child(5){
+            background-image: url('./images/nnnn\ \(1\).jpg');
+        }
+        div.artView>div.thumb>ul.thumGroup>li:nth-child(6){
+            background-image: url('./images/nnnn\ \(2\).jpg');
+        }
+        div.artView>div.thumb>ul.thumGroup>li:nth-child(7){
+            background-image: url('./images/nnnn\ \(3\).jpg');
+        }
+        div.artView>div.thumb>ul.thumGroup>li:nth-child(8){
+            background-image: url('./images/maine-coon-g27ab0cb46_1920.jpg');
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var i = 0;
+            var k = $('.thumGroup>li').index()
+            $('.thumGroup>li').click(function(){
+                var img = $(this).css('background-image');
+                $('.thumbView').css('background-image',img);
+                $('.thumGroup>li').css({
+                    filter:'grayscale(1)',
+                    border: '0'
+                });
+                $(this).css({
+                    filter: 'grayscale(0)',
+                    border: '4px solid #fc0'
+                });
+                var ind = $(this).index();
+                k = ind;
+                if(k > 0 && k < 7){
+                    $('button').css('opacity',100+'%');
+                }
+            });
+            $('button').eq(0).click(function(){
+                i--;
+                if(i < 0){
+                    i = 0;
+                }
+                k--;
+                if(k < 0){
+                    k = 0;
+                }
+                if(k == 0){
+                    $(this).css('opacity',0+'%');
+                }else {
+                    $('button').eq(1).css('opacity',100+'%');
+                }
+                $('.thumGroup').css('margin-left',i*-16.5+'%');
+                $('.thumbView').css('background-image',$('.thumGroup>li').eq(k).css('background-image'));
+                $('.thumGroup>li').css({
+                    filter: 'grayscale(1)',
+                    border: '0'
+                });
+                $('.thumGroup>li').eq(k).css({
+                    filter: 'grayscale(0)',
+                    border: '4px solid #fc0'
+                });
+            });
+            $('button').eq(1).click(function(){
+                i++;
+                if(i >= 3){
+                    i = 2;
+                }
+                k++;
+                if(k >= 8){
+                    k = 7;
+                }
+                if(k == 7){
+                    $(this).css('opacity',0+'%');
+                }else {
+                    $('button').eq(0).css('opacity',100+'%');
+                }
+                $('.thumGroup').css('margin-left',i*-16.5+'%');
+                $('.thumbView').css('background-image',$('.thumGroup>li').eq(k).css('background-image'));
+                $('.thumGroup>li').css({
+                    filter: 'grayscale(1)',
+                    border: '0'
+                });
+                $('.thumGroup>li').eq(k).css({
+                    filter: 'grayscale(0)',
+                    border: '4px solid #fc0'
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="thumbView"></div>
+        <div class="thumb">
+            <ul class="thumGroup">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <button>left</button>
+    <button>right</button>
+</body>
+</html>

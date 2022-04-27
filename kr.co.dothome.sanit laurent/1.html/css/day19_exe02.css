@@ -1,0 +1,114 @@
+div.cntWrap{
+    margin-top: 280px;
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header{
+    text-align: center;
+}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 25px;
+    height: 80px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.header>p{
+    width: 50%;
+    height: 40px;
+    overflow: hidden;
+    margin: 0 auto;
+    font-size: 12px; 
+    line-height: 20px;
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 40px;
+    outline: 2px solid blue;
+}
+div.cntWrap>div.content>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.article{
+    float: left;
+    width: calc(50% - 20px);
+    outline: 2px solid red;
+    margin: 0px 10px;
+}
+div.cntWrap>div.content>div.section>div.article:nth-child(2)+div.article{
+    margin-top: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.image{
+    height: 240px;
+    background-color: black;
+    float: left;
+    width: 50%;
+    
+}
+div.cntWrap>div.content>div.section>div.article>div.texts{
+    float: left;
+    width: 50%;
+    padding: 40px 20px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>h3{
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>h5{
+    font-size: 12px;
+    font-weight: 700px;
+    line-height: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.texts>p{
+    font-size: 12px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+}
+
+div.bnrWrap{
+    margin-top: 240px;
+    background-color: crimson;
+    padding-bottom: 60px;
+}
+div.bnrWrap>div.banner{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+}
+div.bnrWrap>div.banner>h2{
+    font-size: 25px;
+    line-height: 80px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.bnrWrap>div.banner>h5{
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: 700;
+}
+div.bnrWrap>div.banner>p{
+    font-size: 12px;
+    line-height: 20px;
+    height: 40px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+div.bnrWrap>div.banner>div.btn{
+    font-size: 15px;
+    margin: 20px auto 0px;
+    line-height: 40px;
+    width: calc(100% / 15 * 2);
+    text-transform: uppercase;
+    background-color: black;
+    outline: 1px solid black;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}

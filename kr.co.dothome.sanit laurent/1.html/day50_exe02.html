@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.cntWrap{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.accodian>ul.aco>li:nth-child(odd){
+            height: 40px;
+            background-color: #fc0;
+            text-align: center;
+            line-height: 40px;
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        /* div.cntWrap>div.accodian>ul.aco>li.toggleSlide+li{
+            height: 100px;
+        } */
+        div.cntWrap>div.accodian>ul.aco>li:nth-child(even){
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            height: 100px;
+            padding: 0px 140px 0px 140px;
+            overflow: hidden;
+            /* transition: all 1s; */
+            /* transition: all 1s; */
+        }
+        div.cntWrap>div.accodian>ul.aco>li:nth-child(even).on{
+            height: 100px;
+        }
+        div.cntWrap>div.accodian>ul.aco>li>p{
+            line-height: 20px;
+            font-size: 14px;
+            height: 60px;
+            padding-top: 30px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('li').even().click(function(){
+                var ind = $(this).index()
+                $('li').next().eq(ind).slideToggle(500);
+            });
+            // $('li').even().click(function(){
+            //     $(this).next().toggleClass('on');
+            // });
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="accodian">
+            <ul class="aco">
+                <li>title</li>
+                <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo et sapiente deleniti. Eveniet qui tenetur officiis, ad saepe quam assumenda deleniti velit. Doloribus eum repudiandae optio voluptas assumenda aliquam.</p></li>
+                <li>title</li>
+                <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio illo et sapiente deleniti. Eveniet qui tenetur officiis, ad saepe quam assumenda deleniti velit. Doloribus eum repudiandae optio voluptas assumenda aliquam.</p></li>
+                <li>title</li>
+                <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, temporibus minima. Molestias, omnis repellendus? Consequuntur ab dolores reiciendis! Aut quos iste laboriosam nobis sint enim ratione voluptatem et nulla dolorem.</p></li>
+                <li>title</li>
+                <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, temporibus minima. Molestias, omnis repellendus? Consequuntur ab dolores reiciendis! Aut quos iste laboriosam nobis sint enim ratione voluptatem et nulla dolorem.</p></li>
+                <li>title</li>
+                <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, temporibus minima. Molestias, omnis repellendus? Consequuntur ab dolores reiciendis! Aut quos iste laboriosam nobis sint enim ratione voluptatem et nulla dolorem.</p></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

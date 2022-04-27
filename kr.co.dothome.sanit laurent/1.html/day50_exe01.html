@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+        }
+        div.toggleSlide{
+            background-color: red;
+        }
+        div.toggleClass{
+            background-color: blue;
+            transition: all 1s;
+            width: 0px;
+        }
+        div.toggleClass.on{
+            background-color: black;
+            width: 500px;
+        }
+        div.toggleFade{
+            background-color: green;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('button').eq(0).click(function(){
+                $('.toggleSlide').slideToggle(500);
+            });
+            $('button').eq(1).click(function(){
+                $('.toggleClass').toggleClass('on');
+            });
+            $('button').eq(2).click(function(){
+                $('.toggleFade').fadeToggle(500);
+                // 토글 페이드 소가로에 들어가는 건 시간 < 즉 초수만 들어갈 수 있음
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>토글 슬라이드</button>
+    <div class="toggleSlide"></div>
+    <button>토글 클래스</button>
+    <div class="toggleClass"></div>
+    <button>토글 페이드</button>
+    <div class="toggleFade"></div>
+</body>
+</html>

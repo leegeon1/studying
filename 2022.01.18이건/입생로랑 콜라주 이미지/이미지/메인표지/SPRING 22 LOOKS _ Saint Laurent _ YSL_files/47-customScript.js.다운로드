@@ -1,0 +1,113 @@
+!function () {
+  var $;
+  var device;
+  function waitForInside() {
+    if (_insideGraph.jQuery && insideAPI && insideFrontInterface && insideFrontInterface.bind && insideFrontInterface.chat && insideFrontInterface.chat.settings) {
+      $ = _insideGraph.jQuery;
+      device = $.inside.front.getDevice();
+      var websiteId = insideFrontInterface.chat.userid.split(':')[1];
+      
+      var settingName = typeof insideFrontInterface != 'undefined' && insideFrontInterface.chatSettings && insideFrontInterface.chatSettings.description;
+
+      if(typeof settingName == 'undefined' || settingName == '') return;
+
+      if (insideFrontInterface.chatSettings && insideFrontInterface.chatSettings.version == 2) {
+        // custom department selector for themes
+        _insideGraph.loadJS(_insideCDN + 'custom/' + websiteId + '-custom-prechat.js?v=' + _insideScriptVersion);
+        return;
+      }
+
+      if(settingName.toLowerCase().search('bou') > -1) customizeChatPane();
+
+      // custom department selector  
+      if (settingName.toLowerCase().search('saint laurent') > -1) {
+        _insideGraph.loadJS(_insideCDN + 'custom/' + websiteId + '-customDepartmentSelector.js?v=' + Math.random());
+      } else if (settingName.toLowerCase().search('bottega veneta') > -1) {
+        _insideGraph.loadCSS(_insideCDN + 'custom/' + websiteId + '-kering-bottega.css?v=' + Math.random());
+      }
+    }
+    else {
+      setTimeout(waitForInside, 400);
+    }
+  }
+  waitForInside();
+
+  function customizeChatPane() {
+    if (device == 1) { // Desktop
+      insideFrontInterface.chat.settings.showChatNotifications = false; // chat pane should open when a message is received on desktop
+      if ($('#inside_holder .inside-notification').length > 0) {
+        insideFrontInterface.openChatPane();
+      }
+    } else { // Mobile or Tablet
+      insideFrontInterface.chat.settings.showChatNotifications = true; // first message will show as notification, then red bubble on chat tab will show with unread message count 
+      insideFrontInterface.chat.settings.notificationStyle = "standard";
+      if (device == 3) { // Tablet only
+        if (typeof insideFrontInterface.chat.showChatNotification !== 'function') { // not v1.25.0
+          insideFrontInterface.chat.showChatNotification = showChatNotification;
+        }
+        $.inside.bind("chat", chatReceived);
+        setTimeout(replaceNotification, 1000);
+      }
+    }
+  }
+
+  function replaceNotification() {
+    if(firstOpMessage()) { // first message will show as notification
+      return;
+    }
+    $('#inside_holder .inside-notification').remove();
+    insideFrontInterface.chat.setOnlineChatTab();
+    $('#inside_liveChatTab').fadeIn();
+    insideFrontInterface.chat.showChatNotification();
+  }
+
+  function chatReceived(messages) {
+    var visitorHasDNDFlag = insideFrontInterface.chat.data.flags.indexOf("dnd") !== -1;
+    var availableAssistants = insideFrontInterface.getAvailableAssistants();
+    var lastMessage = messages[messages.length - 1], lastMessageFromUser = lastMessage.fromid.indexOf("user") == 0;
+    var chatWindowNotVisible = !$("#inside_chatWindow, #inside_chatPane_custom_chatHolder").is(":visible");
+
+    if (availableAssistants.length > 0 && !visitorHasDNDFlag && !lastMessageFromUser && chatWindowNotVisible) {
+      replaceNotification();
+    }
+  }
+
+  function showChatNotification(target) {
+    if (typeof (target) == "undefined") {
+      target = "#inside_liveChatTab";
+    }
+    var $target = $(target);
+
+    var unreadMessageCount = insideFrontInterface.chat.unreadMessageCount;
+
+    if (unreadMessageCount == 0) {
+      $target.find(".inside_chatNotification").remove();
+      return;
+    }
+
+    var chatNotif;
+    if ($target.find(".inside_chatNotification").length > 0) {
+      chatNotif = $target.find(".inside_chatNotification").text(unreadMessageCount);
+    } else {
+      chatNotif = $("<div class='inside_chatNotification'>" + unreadMessageCount + "</div>").appendTo(target);
+    }
+
+    if (typeof insideTween !== 'undefined') {
+      insideTween.TweenLite.to([chatNotif], 0, { scaleX: 0, scaleY: 0, ease: insideTween.Elastic.easeOut });
+      insideTween.TweenLite.to([chatNotif], 1, { scaleX: 1, scaleY: 1, ease: insideTween.Elastic.easeOut });
+    }
+  }
+
+  function firstOpMessage() {
+    var operatorMessages = [], visitorMessages = [];
+    for (var i = 0; i < insideFrontInterface.chat.messagesList.length; i++) {
+      var message = insideFrontInterface.chat.messagesList[i];
+      if (message.fromid.search('user') > -1) {
+        visitorMessages.push(message);
+      } else if (message.fromid.search('assistant') > -1) {
+        operatorMessages.push(message);
+      }
+    }
+    return operatorMessages.length < 2;
+  }
+}()

@@ -1,0 +1,35 @@
+코딩용 에디터
+visual studio code - 제일 많이 쓰고 선호함
+brackey - html 만 쓰기 좋음
+A tom 
+Eclipse 
+
+view> 첫번째 메뉴 > color > dark
+
+head 의 메타태크 확인요소
+
+html lang – 한글 적용시키는 거 “ko” 로 바꾸기
+charset utf-8 < 적용 안 되면 언어가 깨짐 적용 필수
+content="width=device-width < 반응형 웹에 필수요소
+<title>Document</title> 웹사이트의 제목
+
+body의 들어가는 모든 태그들은 viewport에 적용됨
+
+header 
+Contents
+footer 는 모두 바디의 자식태크
+
+
+wrap은 그리드 시스템의 바깥쪽을 표현 
+헤더로 예시를 들자면
+<body><div class="hdr(header) wrap"><div class="header"></div> </div>
+          <div class="cnt(content) wrap"><div class="content"></div> </div></body>
+그리드의 바깥쪽을 한다는 개념이니까 그리드 안에 들어가는 애들은 다 랩으로 감싼다고
+생각하면 됨
+
+웹 표준, 웹 접근성 < 두개는 다르다.
+
+웹표준 - 웹의 룰 반드시 적용시켜야 할 것[필수]
+
+웹 접근성 - 웹의 진입하기 좋은 것 [배려]
+

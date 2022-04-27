@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        ul{
+            width: 50%;
+            margin: 150px auto;
+        }
+
+        ul>li:nth-child(odd){
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 40px;
+            text-transform: uppercase;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        ul>li:nth-child(even).info{
+            height: 140px;
+        }
+        /* ul>li:nth-child(odd).info{
+            background-color: #999;
+        } */
+        ul>li:nth-child(even){
+            font-size: 14px;
+            line-height: 20px;
+            padding: 0px 40px;
+            height: 0px;
+            overflow: hidden;
+            background-color: #666;
+            color: #fff;
+            
+        }
+        ul>li:nth-child(even)>p{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            height: 60px;
+            overflow: hidden;
+            text-align: left;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script> 
+    <script>
+         $(function(){
+            $('li').even().click(function(){
+                $(this).addClass('info')
+            });
+         });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>infomation</li>
+        <li class="info"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+    </ul>
+</body>
+</html>

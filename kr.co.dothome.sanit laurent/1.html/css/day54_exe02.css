@@ -1,0 +1,547 @@
+
+
+
+/* 메뉴탑 */
+
+.mnTopWrap{
+    background-color: #000;
+}
+.menuTop{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.mnLeft{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% / 12 * 3.8);
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+.navRight{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% / 12 * 3);
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+
+/* 헤더 */
+.hdrWrap header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.hdrWrap .hdrTop{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0px 80px;
+}
+.hdrWrap .hdrTop h4{
+    font-size: 12px;
+    line-height: 40px;
+}
+.hdrWrap .hdrTop h1{
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.hdrWrap .hdrTop .btn{
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #fc0;
+}
+.hdrWrap .hdrBtm{
+    background-color: darkgreen;
+    margin-top: -40px;
+    position: relative;
+}
+.hdrWrap .navLeft{
+    color: #fff;
+    display: flex;
+    width: calc(100% / 12 * 6.5);
+    line-height: 80px;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+.hdrWrap .navLeft li{
+    margin-left: 30px;
+}
+
+
+/* 메인 */
+
+
+.mainWrap{
+    background-color: #ccc;
+    padding-top: 320px;
+    padding-bottom: 320px;
+    margin-top: -40px;
+}
+.mainWrap main{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: darkgreen;
+}
+.mainWrap h2{
+    font-size: 72px;
+    line-height: 80px;
+    font-weight: 700;
+}
+.mainWrap h5{
+    font-size: 18px;
+    line-height: 40px;
+}
+
+/* 배너공통 */
+.bnrWrap .banner{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* 배너1 */
+
+
+.bnrWrap:nth-child(4){
+    margin-top: -120px;
+}
+.banner.bnr01{
+    padding-bottom: 40px;
+}
+.banner.bnr01 .bnrTop{
+    display: flex;
+    justify-content: space-between;
+}
+.banner.bnr01 article{
+    width: calc(100% / 4 - 10px);
+    margin: 0 5px;
+}
+.banner.bnr01 .bnrTop .image{
+    background-color: #ebebeb;
+    height: 240px;
+}
+.banner.bnr01 .bnrTop .texts{
+    padding: 40px 70px 30px 30px;
+    margin-top: -240px;
+}
+.banner.bnr01 .bnrTop h3{
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.banner.bnr01 .bnrTop p{
+    font-size: 14px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+}
+.banner.bnr01 .bnrTop .btn{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 30px;
+    background-color: #fc0;
+    width: calc(100% / 3 * 2);
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.banner.bnr01 .bnrBtm{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.banner.bnr01 .bnrBtm article{
+    width: calc(100% / 5);
+    display: flex;
+    justify-content: space-around;
+}
+.banner.bnr01 .bnrBtm .image{
+    width: 80px;
+    height: 80px;
+    clip-path: circle(50% at 50% 50%);
+    background-color: #ccc;
+}
+.banner.bnr01 .bnrBtm .texts{
+    font-size: 14px;
+    margin-top: 20px;
+}
+.banner.bnr01 .bnrBtm h4{
+    line-height: 20px;
+}
+.banner.bnr01 .bnrBtm h4:nth-child(2){
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+/* 컨텐츠 공통 */
+.cntWrap .content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.cntWrap header{
+    text-align: center;
+    margin-top: 120px;
+}
+.cntWrap .content h4{
+    font-size: 14px;
+    line-height: 40px;
+    opacity: 70%;
+}
+.cntWrap .content h2{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+.cntWrap .content h2::after{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 80px;
+    background-color: #333;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.cntWrap .content header p{
+    line-height: 20px;
+    height: 40px;
+    font-size: 14px;
+    width: calc(100% / 12 * 6);
+    margin: 0 auto;
+    overflow: hidden;
+}
+.cntWrap .content section{
+    margin-top: 40px;
+}
+
+/* 컨텐츠1 */
+.cntWrap:nth-child(5){
+    background-color: #ccc;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.cntWrap:nth-child(5) header{ 
+    margin-top: 0;
+}
+.cntWrap section{
+    display: flex;
+    justify-content: space-between;
+}
+.cntWrap section article{
+    width: calc(100% / 4 - 10px);
+    margin: 0 5px;
+}
+.cntWrap .content.cnt01 .image{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background-color: darkgreen;
+    clip-path: circle(50% at 50% 50%);
+}
+.cntWrap .content.cnt01 .texts{
+    margin-top: 20px;
+    padding: 0px 20px 0px 20px;
+    text-align: center;
+}
+.cntWrap .content.cnt01 h3{
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.cntWrap .content.cnt01 .texts p{
+    font-size: 14px;
+    height: 80px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.cntWrap .content.cnt01 .btn{
+    width: calc(100% / 3);
+    margin: 0 auto;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    margin-top: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* 컨텐츠2 */
+.cntWrap .content.cnt02 section{
+    display: flex;
+    justify-content: space-between;
+}
+.cntWrap .content.cnt02 .image{
+    height: 200px;
+    background-color: darkgreen;
+}
+.cntWrap .content.cnt02 .texts{
+    margin-top: 20px;
+}
+.cntWrap .content.cnt02 h3{
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.cntWrap .content.cnt02 .texts p{
+    font-size: 14px;
+    height: 60px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.cntWrap .content.cnt02 .btn{
+    font-size: 16px;
+    line-height: 40px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+/* 배너2 */
+
+
+
+.bnrWrap:nth-last-child(3){
+    margin-top: 120px;
+}
+.banner.bnr02{
+    display: flex;
+    justify-content: space-between;
+}
+.banner.bnr02 .bnrLeft{
+    width: 50%;
+}
+.banner.bnr02 .bnrLeft .ovrGrid{
+    background-color: darkgreen;
+    height: 840px;
+    width: calc((100vw - 1080px) / 2 + 100%);
+    margin-left: calc((100vw - 1080px) / -2);
+}
+.banner.bnr02 .bnrLeft .texts{
+    margin-top: -840px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    color: #fff;
+}
+.banner.bnr02 h4{
+    font-size: 14px;
+    line-height: 20px;
+}
+.banner.bnr02 h2{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+.banner.bnr02 h2::after{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 80px;
+    background-color: #fff;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.banner.bnr02 header p{
+    line-height: 20px;
+    width: calc(100% / 6 * 5.5);
+    height: 40px;
+    font-size: 14px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+form{
+    margin-top: 40px;
+}
+.banner.bnr02 form h4{
+    font-size: 18px;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+form input{
+    line-height: 40px;
+}
+form label{
+    font-size: 12px;
+    line-height: 40px;
+    margin-left: 10px;
+    margin-right: 70px;
+}
+
+.formGroup{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% / 6 * 5);
+    margin-top: 20px;
+}
+.formGroup label{
+    margin-right: 0px;
+}
+.formGroup input{
+    background-color: transparent;
+}
+hr{
+    border: 1px solid #fff;
+    margin-top: 20px;
+    opacity: 70%;
+}
+.banner.bnr02 .texts .btn{
+    width: calc(100% / 6 * 2);
+    background-color: #fc0;
+    line-height: 40px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+.banner.bnr02 .bnrRight{
+    width: 50%;
+}
+
+.banner.bnr02 .bnrRight .ovrGrid{
+    height: 840px;
+    background-color: #cccccc;
+    width: calc((100vw - 1080px) / 2 + 100%);
+}
+
+
+/* 컨텐츠3 */
+
+
+
+.content.cnt03 article:hover .image{
+    transform: rotateX(180deg);
+}
+.content.cnt03 article:hover .texts{
+    transform: rotateX(0deg);
+    background-color: darkgreen;
+    color: #fff;
+}
+.content.cnt03 section .image{
+    background-color: #999;
+    height: 280px;
+    transform: rotateX(0deg);
+    transition: transform 1s;
+    backface-visibility: hidden;
+}
+.content.cnt03 section .texts{
+    padding: 40px 20px 40px 20px;
+    margin-top: -280px;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: transform 1s;
+    background-color: darkgreen;
+    color: #fff;
+}
+/* .content.cnt03 article:hover .texts{
+    background-color: darkgreen;
+    color: #fff;
+} */
+.content.cnt03 section h5{
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 700;
+}
+.content.cnt03 section h3{
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+}
+.content.cnt03 section p{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    height: 60px;
+    overflow: hidden;
+}
+.content.cnt03 section .btn{
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/* 푸터 */
+
+
+.ftrWrap{
+    margin-top: 120px;
+    background-color: #000;
+}
+footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+footer .ftrLeft{
+    width: calc(100% / 12 * 8.8);
+}
+footer .nav{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% / 8.8 * 6.8);
+    font-size: 14px;
+    line-height: 20px;
+}
+footer .nav li::after{
+    display: inline;
+    content: '';
+    border: 1px solid #fff;
+    margin-left: 10px;
+}
+footer .nav li:nth-child(7):after{
+    opacity: 0;
+}
+footer .info{
+    width: calc(100%);
+    display: flex;
+    justify-content: space-between;
+}
+footer .info h1{
+    width: calc(100% / 8.8);
+    font-size: 14px;
+    line-height: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+footer .infoGroup{
+    width: calc(100% / 8.8 * 7.8);
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 20px;
+}
+footer .infoGroup h5{
+    margin-top: 20px;
+}
+footer .ftrRight{
+    width: calc(100% / 12 * 2);
+}
+select{
+    width: calc(100%);
+    text-align: center;;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    text-transform: capitalize;
+}

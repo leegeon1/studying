@@ -1,0 +1,14 @@
+깃허브 연결하는 법
+깃을 다운로드 한다
+깃 다운로드 할 때 그냥 다 next
+깃허브를 로그인 한다.
+
+tortoisegit 검색해서 들어간다.
+컴퓨터 윈도우에 맞는 비트를 선택해서 다운로드한다.
+바탕화면에서 오른쪽 클릭했을 때 깃이랑 tortoisegit 있으면
+설치완료 된 거임
+
+올리기 전에 staging 을 거쳐서 가상서버에서 테스트를 하고
+올려야 됨 그래서 tortoisegit 커밋하고 푸시 해야함
+
+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  내 토큰

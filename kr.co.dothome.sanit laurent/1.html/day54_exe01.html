@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        section{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        article{
+            width: calc(100% / 4 - 20px);
+            perspective: 1000px;
+        }
+        article:hover .texts{
+            transform: rotateY(0deg);
+        }
+        article:hover .image{
+            transform: rotateY(180deg);
+        }
+        .image{
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: rotateY(0deg);
+            backface-visibility: hidden;
+            transition: transform 1s;
+        }
+        .image.i1{
+            background-image: url(./images/cnt01_pic01.jpg);
+        }
+        .image.i2{
+            background-image: url(./images/cnt01_pic02.jpg);
+        }
+        .image.i3{
+            background-image: url(./images/cnt01.pic03.jpg);
+        }
+        .image.i4{
+            background-image: url(./images/bnrWrap.jpg);
+        }
+        .texts{
+            height: 240px;
+            margin-top: -240px;
+            background-color: #ccc;
+            padding: 20px;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: transform 1s;
+        }
+        .texts h3{
+            font-size: 15px;
+            line-height: 40px;
+            
+        }
+        .texts p{
+            font-size: 14px;
+            line-height: 20px;
+            height: 80px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article>
+            <div class="image i1"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsam beatae, perspiciatis, nihil deserunt eius ducimus recusandae ratione tenetur, eos commodi hic amet doloremque consequatur. Odio corporis exercitationem in rerum!</p>
+            </div>
+        </article>
+        <article>
+            <div class="image i2"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsam beatae, perspiciatis, nihil deserunt eius ducimus recusandae ratione tenetur, eos commodi hic amet doloremque consequatur. Odio corporis exercitationem in rerum!</p>
+            </div>
+        </article>
+        <article>
+            <div class="image i3"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsam beatae, perspiciatis, nihil deserunt eius ducimus recusandae ratione tenetur, eos commodi hic amet doloremque consequatur. Odio corporis exercitationem in rerum!</p>
+            </div>
+        </article>
+        <article>
+            <div class="image i4"></div>
+            <div class="texts">
+                <h3>segment title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsam beatae, perspiciatis, nihil deserunt eius ducimus recusandae ratione tenetur, eos commodi hic amet doloremque consequatur. Odio corporis exercitationem in rerum!</p>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 500px;
+        }
+        div.artView>ul.artGroup{
+            height: 500px;
+            transition: margin-left 0.5s;
+        }
+        div.artView>ul.artGroup::after{
+            clear: both;
+            display: block;
+            content: '';
+        }
+        div.artView>ul.artGroup>li{
+            width: calc(100%);
+            height: 500px;
+            float: left;
+        }
+        div.artView>ul.artGroup>li:nth-child(1){
+            background-color: rgb(34, 28, 28);
+        }
+        div.artView>ul.artGroup>li:nth-child(2){
+            background-color: red;
+        }
+        div.artView>ul.artGroup>li:nth-child(3){
+            background-color: blue;
+        }
+        div.artView>ul.artGroup>li:nth-child(4){
+            background-color: green;
+        }
+        div.artView>ul.artGroup>li:nth-child(5){
+            background-color: orange;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var i = 0;
+            $('button').eq(0).click(function(){
+                i++
+                console.log(i)
+                if(i >= 5){
+                    i=4;
+                 } 
+                $('.artGroup').css('margin-top',i * -500+'px');
+            });
+            $('button').eq(1).click(function(){
+                i--
+                console.log(i)
+                if(i <= 0){
+                    i=0;
+                 } 
+                $('.artGroup').css('margin-top',i * -500+'px');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <ul class="artGroup">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button>up</button>
+    <button>down</button>
+</body>
+</html>

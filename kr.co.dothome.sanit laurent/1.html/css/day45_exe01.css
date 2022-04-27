@@ -1,0 +1,137 @@
+
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header>h2{
+    font-size: 36px;
+    line-height: 80px;
+    text-transform: capitalize;
+    font-weight: 700;
+    text-align: left;
+}
+div.cntWrap>div.content>div.header>p{
+    width: calc(100% / 12 * 8);
+    font-size: 14px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 80px;
+}
+div.cntWrap>div.content>div.section>div.article::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.article>div.image{
+    width: calc(100% / 12 * 8 - 20px);
+    margin: 0 10px;
+    float: left;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildeGroup{
+    width: 100%;
+    height: 280px;
+    position: relative;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildeGroup>div.silde{
+    width: 100%;
+    height: 280px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildeGroup>div.silde.i1{
+    background-color: black;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildeGroup>div.silde.i2{
+    background-color: blue;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildeGroup>div.silde.i3{
+    background-color: brown;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildeGroup>div.silde.i4{
+    background-color: blueviolet;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildeGroup>div.silde.i5{
+    background-color: aquamarine;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildeGroup>div.silde.i6{
+    background-color: green;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.sildenum{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+}
+
+
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.btns{
+    position: relative;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.btns>div.btn{
+    color: #fff;
+    font-size: 30px;
+    line-height: 40px;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.btns>div.btn:nth-child(1){
+    width: 50%;
+    position: absolute;
+    left: 20px;
+    bottom: 120px;
+}
+div.cntWrap>div.content>div.section>div.article>div.image>div.sildeView>div.btns>div.btn:nth-child(2){
+    width: 50%;
+    position: absolute;
+    right: 20px;
+    bottom: 120px;
+    text-align: right;
+}
+div.cntWrap>div.content>div.section>div.article>ul.texts{
+    width: calc(100% / 12 * 4 - 20px);
+    margin: 0 10px;
+    float: left;
+    padding-left: 20px;
+}
+div.cntWrap>div.content>div.section>div.article>ul.texts>li:nth-child(odd){
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.section>div.article>ul.texts>li:nth-child(odd).show+li{
+    height: 160px;
+}
+div.cntWrap>div.content>div.section>div.article>ul.texts>li:nth-child(even){
+    height: 0px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section>div.article>ul.texts>li>h5{
+    font-size: 12px;
+    line-height: 40px;
+    font-weight: 700;
+}
+div.cntWrap>div.content>div.section>div.article>ul.texts>li>p{
+    font-size: 14px;
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+}
+div.cntWrap>div.content>div.section>div.article>ul.texts>li>div.btns::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.cntWrap>div.content>div.section>div.article>ul.texts>li>div.btns>div.btn{
+    float: left;
+    line-height: 40px;
+    font-size: 20px;
+}

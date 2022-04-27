@@ -1,0 +1,191 @@
+/* 1번 아코디언 */
+div.cntWrap{
+    width: 80%;
+    max-width: 1080px;
+    margin: 100px auto;
+}
+div.cntWrap>ul.accodian{
+    width: 50%;
+    margin: 0 auto;
+}
+div.cntWrap>ul.accodian>li:nth-child(odd){
+    height: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 40px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+div.cntWrap>ul.accodian>li:nth-child(even){
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    padding-right: 60px;
+    text-align: left;
+    height: 0px;
+    overflow: hidden;
+    transition: height 1s;
+    
+}
+div.cntWrap>ul.accodian>li.show+li{
+    height: 80px;
+}
+div.cntWrap>ul.accodian>li>p{
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+/* 2번 일반슬라이드 구현 */
+div.cntWrap>div.sildeView{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 100px;
+}
+div.cntWrap>div.sildeView>div.sildeGroup{
+    width: 400%;
+    transition: margin-left 1s;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article{
+    width: calc(100% / 12 - 20px);
+    margin: 0 10px;
+    float: left;
+    height: 200px;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(1){
+    background-color: red;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(2){
+    background-color: black;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(3){
+    background-color: blue;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(4){
+    background-color: green;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(5){
+    background-color: gray;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(6){
+    background-color: palegoldenrod;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(7){
+    background-color: chartreuse;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(8){
+    background-color: cyan;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(9){
+    background-color: darkkhaki;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(10){
+    background-color:  aquamarine;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(11){
+    background-color: blueviolet;
+}
+div.cntWrap>div.sildeView>div.sildeGroup>div.article:nth-child(12){
+    background-color: chocolate;
+}
+div.cntWrap>div.indSildeView{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+div.cntWrap>div.indSildeView>div.indSildeGroup{
+    width: 500%;
+    transition: margin-left 1s;
+}
+div.cntWrap>div.indSildeView>div.indSildeGroup>div.article{
+    width: calc(100% / 5);
+    height: 500px;
+    float: left;
+}
+div.cntWrap>div.indSildeView>div.indSildeGroup>div.article:nth-child(1){
+    background-color: red;
+}
+div.cntWrap>div.indSildeView>div.indSildeGroup>div.article:nth-child(2){
+    background-color: blue;
+}
+div.cntWrap>div.indSildeView>div.indSildeGroup>div.article:nth-child(3){
+    background-color: pink;
+}
+div.cntWrap>div.indSildeView>div.indSildeGroup>div.article:nth-child(4){
+    background-color: green;
+}
+div.cntWrap>div.indSildeView>div.indSildeGroup>div.article:nth-child(5){
+    background-color: skyblue;
+}
+div.cntWrap>div.indSildeView>ul.paging::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.cntWrap>div.indSildeView>ul.paging{
+    width: 30%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 20px;
+    left: 40%;
+}
+div.cntWrap>div.indSildeView>ul.paging>li{
+    width: 20px;
+    height: 20px;
+    background-color: #fc2;
+    float: left;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+div.cntWrap>div.indSildeView>ul.paging>li.new{
+    width: 30px;
+}
+/* 4번 문제 */
+div.SildeView{
+    width: 100%;
+    margin-top: 100px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+div.SildeView::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+div.SildeView>div.SildeGroup{
+    width: calc(100% / 3 - 20px);
+    margin: 0 10px;
+    float: left;
+}
+div.SildeView>div.SildeGroup>div.article{
+    height: 200px;
+}
+div.SildeView>div.SildeGroup>div.article:nth-child(1){
+    background-color: darkcyan;
+}
+div.SildeView>div.SildeGroup>div.article:nth-child(2){
+    background-color: darkgoldenrod;
+}
+div.SildeView>div.SildeGroup>div.article:nth-child(3){
+    background-color: gray;
+}
+div.SildeView>div.SildeGroup>div.article:nth-child(4){
+    background-color: black;
+}
+div.cntWrap>div.SildeView>ul.sircle{
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+}
+div.cntWrap>div.SildeView>ul.sircle>li{
+    height: 20px;
+    width: 20px;
+    background-color: #fc2;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+div.cntWrap>div.SildeView>ul.sircle>li.on{
+    height: 30px;
+}

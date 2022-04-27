@@ -1,0 +1,51 @@
+scroll, mousewheel 두개의 액션 차이
+
+scroll 액션은 스크롤 바가 있어서 real로 움직일 때 
+
+cmousewheel은 스크롤 바가 없어도 마우스 휠을 사용 할 때
+
+두개의 차이는 스크롤 바가 있고 없고를 구분 지어줌
+
+풀페이지 헤더는 스크롤이 없어야하고 한장만 딱 보일 때 사용함
+즉 풀페이지는 스크롤이 없어야 하니까 마우스 휠 액션을 사용함
+
+
+선택자
+1. window
+2.document
+3.body,html
+이 세개만 고려하면 됨
+항상 이 세개를 염두해두고 전체를 했을 때 안먹히면
+세개를 다 사용해봐야함
+
+
+스크롤 같은 경우엔 윈도우에서 작동함
+
+<script>
+        $(function(){
+            var loc = [];
+            var cnt = 0;
+            var flag = false;
+            // 배열 불러오는 것
+            for(var i = 0; i<$('body>div').length; i++){
+                loc[i]=$('body>div').eq(i).offset().top;
+                console.log(loc);
+            }
+            // 마우스휠은 존재하는 함수이나, 자동완성이 안뜨기 때문에 on으로 해서 넣어야 한다.
+            $(window).on('mousewheel', function(){
+                if(!flag){
+                    cnt++;
+                    flag=true;
+                }
+                if(cnt>=4){
+                    cnt=4;
+                }
+                console.log(cnt);
+                $('html').animate({scrollTop: loc[cnt]}, 500, function(){
+                    flag=false;
+                });
+            });
+        });
+    </script>
+
+https://api.jqueryui.com/easings/ 제이쿼리 풀페이지 or 슬라이드 이팩트

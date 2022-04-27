@@ -1,0 +1,20 @@
+코딩용 에디터
+visual studio code - 제일 많이 쓰고 선호함
+brackey - html 만 쓰기 좋음
+A tom 
+Eclipse 
+
+view> 첫번째 메뉴 > color > dark
+
+head 의 메타태크 확인요소
+
+html lang – 한글 적용시키는 거 “ko” 로 바꾸기
+charset utf-8 < 적용 안 되면 언어가 깨짐 적용 필수
+content="width=device-width < 반응형 웹에 필수요소
+<title>Document</title> 웹사이트의 제목
+
+body의 들어가는 모든 태그들은 viewport에 적용됨
+
+header 
+Contents
+footer 는 모두 바디의 자식태크

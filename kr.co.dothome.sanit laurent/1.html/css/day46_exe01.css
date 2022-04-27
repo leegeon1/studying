@@ -1,0 +1,25 @@
+div.artGroup{
+    width: 1000px;
+    height: 280px;
+}
+div.artGroup>div.article{
+    width: 200px;
+    height: 280px;
+    float: left;
+    font-size: 36px;
+}
+div.artGroup>div.article.a1{
+    background-color: pink;
+}
+div.artGroup>div.article.a2{
+    background-color: gray;
+}
+div.artGroup>div.article.a3{
+    background-color: purple;
+}
+div.artGroup>div.article.a4{
+    background-color: blue;
+}
+div.artGroup>div.article.a5{
+    background-color: burlywood;
+}

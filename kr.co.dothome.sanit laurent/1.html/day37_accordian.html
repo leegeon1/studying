@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        ul{
+            width: 50%;
+            margin: 150px auto;
+        }
+
+        ul>li:nth-child(odd){
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 40px;
+            text-transform: uppercase;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        ul>li:nth-child(odd).info+li{
+            height: 140px;
+        }
+        /* ul>li:nth-child(odd).info{
+            background-color: #999;
+        } */
+        ul>li:nth-child(even){
+            font-size: 14px;
+            line-height: 20px;
+            padding: 0px 40px;
+            height: 0px;
+            overflow: hidden;
+            background-color: #666;
+            color: #fff;
+            
+        }
+        ul>li:nth-child(even)>p{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            height: 60px;
+            overflow: hidden;
+            text-align: left;
+        }
+    </style>
+    <!-- 자바스크립트 제이쿼리 불러오는 법 -->
+    <!-- <script src=""></script> 여기서 js 파일 불러오기 하기 -->
+    <script src="./js/jquery-3.6.0.min.js"></script> 
+    <!-- 스크립트로 제이쿼리 준비하기 -->
+    <script>
+        // function으로 로딩하기 
+        // $(function(){
+                    // });
+        $(function(){
+            // 말 그대로 li중 가장 첫번째 형제한테 백그라운드 색깔을 항시 유지시켜주려고 추가함
+            $('li'+'.info').css('background-color','#666');
+            $('li').eq(1).css({
+                    backgroundColor : '#fff',
+                    color : '#000',
+                    outline: '1px solid #000',
+                    fontWeight: '700'
+                    });
+            // ul안에 있는 li를 클릭할 때 function 작용이 일어나고
+            $('li').even().click(function(){
+                // 클릭 후 변화되는 것은 this로 그 자체 하나를 클릭했을 때 info 즉 클래스명을 준 그 요소에 info 클래스명을 추가시켜줌으로서 위에
+                // 높이를 지정한 값이 그 클릭하는 요소한테 클래스명을 부여하며 높이가 생김
+                $('li').removeClass('info');
+                $(this).addClass('info');
+                // li의 짝수, 즉 css 에선 홀수지만 제이쿼리에선 짝수가 홀수처럼 보임 0부터 시작하기 때문에 인포메이션은 색깔을 유지함
+                $('li').even().css('background-color','#333');
+                // 위와 마찬가지로 인포메이션만 색깔이 바뀜 even을 통해서
+                // 그리고 this는 '그 자체', '이것' 내가 클릭한 그 자체가 바뀜
+                $(this).even().css('background-color','#666');
+                $('li').odd().css({
+                    backgroundColor : '#fff',
+                    color : '#000',
+                    outline: '1px solid #000',
+                    fontWeight: '700'
+                    });
+            });    
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li class="info">infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+        <li>infomation</li>
+        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, itaque libero sint, iure totam iusto quae quibusdam adipisci exercitationem recusandae aperiam quasi perspiciatis. Exercitationem, mollitia animi placeat rerum delectus quos?</p></li>
+    </ul>
+</body>
+</html>

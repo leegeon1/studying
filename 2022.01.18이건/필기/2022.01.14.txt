@@ -1,0 +1,90 @@
+2022.01.14. 금요일
+html 기초강의
+visual studio code
+컨트롤 + s 저장, 
+사이트 보여지는 걸 의미 viewport
+
+visual studio code 사용해서 extensions 들어간 후 mithril emmet 검색 install 후 
+explorer 들어가서 저장할 때 파일 이름을 뒤에 .html 꼭 적용 시키기.
+그러면 상단 파일 형식이 html 형식으로 바뀌고 ! 누른 후 텝 키 적용시키면 기본 적용 됨
+( ! < 적용 안 될 시 다시 다운로드 받기 )
+
+head
+
+html lang – 한글 적용시키는 거 “ko” 로 바꾸기
+body 안에 들어가는 게 viewport로 나옴 
+크게 볼 것 lang, charset utf-8 < 적용 안 되면 언어가 깨짐 적용 필수
+
+반응형 적용은 width=device=width 있는 지 꼭 확인 안되면 적용안됨
+
+※중요포인트※
+1.html lang – 한글 적용시키는 거 “ko” 로 바꾸기
+2.charset utf-8 < 적용 안 되면 언어가 깨짐 적용 필수
+3.width=device=width 있는 지 꼭 확인
+
+title은 사람들이 들어왔을 때 읽어주는 첫 이름 (보면 홈페이지 이름 자체가 바뀜)
+
+body
+
+body 안에 헤더,컨텐츠,푸터(header,content,pooter)가 적용됨 즉 viewport 부분이 적용된다고 이해하면 됨
+
+태그는 꺾새로 시작해서 꺾새로 끝남
+시작태그랑 끝태그가 항상 존재 ( 예외 케이스는 meta = 닫는 태그가 없음 )
+예시 – 시작(부모요소):<head> 자식요소:<meta charset=“UTF-8”> 끝(부모요소):</head> 
+시작태그랑 끝태그가 중요한 이유 layout (부모요소와 자식요소의 이해)
+body 안에 우리가 구현한 사이트가 들어감
+
+div – (섹션을 나눠줌) div 마다 이름을 붙여주면 ( id, class ) 
+id는 한 개만 가능, class는 중복이 됨
+우리는 class 위주로만 사용, id는 view 배울 때 사용 ( 예외 경우도 있음 )
+id = # 모양으로 표현 ( 예시 #header ) <div class="header"></div> 
+div.header+teb = <div class="header"></div>
+div#header+teb = <div id=“header”></div>
+
+
+<body>
+  시작<div class="header">
+     <div class="logo">
+         <div class="html"></div>
+         <div class="css"></div>
+     </div>
+     <div class="nav">
+         <div class="menu1"></div>
+         <div class="menu2"></div>
+         <div class="menu3"></div>
+    끝</div>
+시작</div>
+   <div class="header2">
+     <div class="logo"></div>
+     <div class="nav">
+         <div class="menu1"></div>
+         <div class="menu2"></div>
+         <div class="menu3"></div>
+         <div class="menu4"></div>
+     </div>
+  끝</div>
+</body>
+
+==========================================================
+단축키
+
+
+ctrl + / 하면 주석 바로 사용가능
+
+주석
+ - <!-- 이거 치면 <!----> 나옴
+<!-- 내용 -->
+
+복사키 
+alt + shift + 숫자키 + 복사됨 예시
+<div class="header"></div> 
+<div class="header"></div>
+이런 형식
+
+art 누른 상태로 문장 이동가능
+
+art + z 하면 긴 문장 줄이기 가능
+
+
+==========================================================
+

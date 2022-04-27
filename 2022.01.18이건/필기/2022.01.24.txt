@@ -1,0 +1,81 @@
+레이아웃이란
+
+헤더 
+네비
+메인
+푸터
+
+항상 헤더는 맨 위, 푸터는 맨 아래 위치
+네비게이션은 내가 만들 페이지 갯수
+예시) 네비가 5개면 5페이지
+통상적으로 4페이지 이상이여야 됨
+
+그리드 시스템
+
+1.그리드의 시스템 기초
+
+디자인 가이드 만들기(photoshop)
+
+그리드시스템: 각잡힌 디자인 설계를 위한 가이드라인
+
+반응형 웹을 만들기 위해 그리드시스템을 이용
+12개로 쪼개서 사용함
+
+그리드시스템의 이해
+
+그리드시스템이란
+
+디자인의 모든요소,즉 타이포그라피,사진,그림등을 
+디자인 결과로 융화시킬 수 있으면 디자인에 질서를 도입하는 수단이다.
+
+그리드시스템의 용어
+margin, column, gutter
+이러한 각을 위해서 웹은 뷰포트 의 기준으로 12컬럼 그리드 시스템을,
+타블릿은 8컬럼 그리드시스템,  4는 컬럼 그리드시스템을 도입한다.
+
+디자인 가이드 약속1 - 크로스 디바이스 사이즈
+
+pc:width:1920px
+tablet:width:780px
+mobile:width:420px
+표준 
+
+(ctrl + g )+레이어 드레그 쭉 레이어 그룹 만들기
+
+ctrl + ; < 그리드 안 보이게 하는 거
+
+알트하고 레이어 ㅡ 사이로 마우스 가져다대면 이미지가 도형 크기에 맞춰서 잘림
+크리에이트 클리핑 마스크 가 위에 풀네임
+
+tower 1's concierge services
+
+마우스 오른쪽 클릭 일러스트로 열어주기
+포ㅓ토샵 가서 컨트롤 씨 컨트롤 브이
+
+형상관리 - 전본 > 교정본 > 계속 업그레이드 하는 순
+업데이트 전 버전이랑 후 버전 삭제하지 말고
+갖고 있어야함
+git을 통한 형상관리
+git연결을 해야한다
+
+이미지 - 
+웹페이지 - 와이어프레임에 이미지까지 합친 걸 작성
+와이어프레임 -
+
+업무의 시작과 끝을 숙련된 발렛서비스를 통해 기분좋게 시작하실 수 있습니다.
+
+lorem ipsum 구글검색
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dolor risus,
+ fermentum sed ipsum id, pharetra venenatis erat. Aliquam condimentum turpis vitae 
+ligula suscipit bibendum. Curabitur egestas tempor augue ac pretium. Cras vestibulum 
+sit amet urna at suscipit. Etiam lobortis lorem nec nunc fringilla tempor. Donec eget enim 
+vel magna imperdiet consectetur. Quisque sem tortor,
+
+레디어스
+
+
+
+
+
+
+
