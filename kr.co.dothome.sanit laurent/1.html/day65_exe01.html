@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drag</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var vs = $('.drag').css('background-color');
+            var ds = $('.drag').css('width');
+            var bs = $('.drag').css('height');
+            $('.drag').draggable({          
+                helper:'clone',
+                revert: true,
+                containment:'.container',
+            });
+            $('.drop').droppable({
+                drop: function(){
+                    $('.drop').draggable({
+                        helper:'clone',
+                        revert: true,
+                        containment:'.container',
+                    });
+                    $('.drop').css('background-color',vs);
+                    $('.drop').css('width',ds);
+                    $('.drop').css('height',bs);
+                }
+            });
+            $('ul').sortable();
+            var i = 0;
+            $('.draggable').draggable({
+                helper:'clone',
+                revert: true,
+                containment:'.parent',
+                drag:function(){
+                    i = $(this).css('background-image');
+                }
+            });
+            $('.droppable').droppable({
+                drop: function(){
+                    $('.droppable').css({
+                        backgroundImage : i
+                    })
+                }
+            });
+            // var bg=0;
+            // $('.drag').draggable({
+            //     revert:true,
+            //     containment:'.parent',
+            //     drag:function(){
+            //         bg = $(this).css('backgroundImage');
+            //     }
+            // });
+            // $('.drop').droppable({
+            //     drop:function(){
+            //         $('.drop').css({
+            //             backgroundImage : bg
+            //         });
+            //     }
+            // });
+        });
+    </script>
+    <style>
+        .container{
+            outline: 1px solid red;
+            width: 1000px;
+            height: 800px;
+            display: none;
+        }
+        .drag{
+            width: 200px;
+            height: 200px;
+            background-color: #fc0;
+        }
+        .drop{
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+        }
+        li{
+            width: 50%;
+            height: 50px;
+            background-color: blue;
+            margin: 20px;
+            color: #fff;
+            text-align: center;
+            font-size: 36px;
+            line-height: 40px;
+            display: none;
+        }
+        .parent{
+            width: 500px;
+            height: 500px;
+            outline: 2px solid red;
+        }
+        .drags{
+            width: 350px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .draggable{
+            width: 100px;
+            height: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .draggable.i1{
+            background-image: url('./images/cnt02_pic01.jpg');
+        }
+        .draggable.i2{
+            background-image: url('./images/cnt02_pic02.jpg');
+        }
+        .draggable.i3{
+            background-image: url('./images/cnt02_pic03.jpg');
+        }
+        .droppable{
+            width: 400px;
+            height: 400px;
+            background-color: #999;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="drag"></div>
+        <div class="drop"></div>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div class="parent">
+        <div class="drags">
+            <div class="draggable i1"></div>
+            <div class="draggable i2"></div>
+            <div class="draggable i3"></div>
+        </div>
+        <div class="droppable"></div>
+    </div>
+</body>
+</html>
