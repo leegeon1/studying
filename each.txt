@@ -1,0 +1,36 @@
+프로그레스 사용법
+
+(this.percent); 함수에 관한 디스는 앞에 $ 넣지않음
+선택자가 아니기 때문에 디스도 선택자의 디스를 가져오는 게 아님
+
+$.each() 예시
+$.each() 메서드는 object 와 배열 모두에서 사용할 수 있는 일반적인 반복 함수이다. 
+다시 말해, 배열과 length 속성을 갖는 배열과 유사 배열 객체들을 index를 기준으로
+ 반복할 수 있다. 첫 번째 매개변수로 배열이나 객체를 받는다. 그리고 두번째 매개변수로 
+콜백함수를 받으며 콜백함수의 인자로는 인덱스와 값을 인자로 갖는다.
+
+
+
+ var sp = $('.slidehdr span');
+sp.each(function(a){
+                nums = $(this).attr('data-num');
+                $({percent:0}).animate({percent:nums},{
+                    duration: 5000,
+                    progress: function(){
+                        console.log(a);
+                        $('h4 span').eq(a).text(parseInt(this.percent));
+                        $('.slidegauge').eq(a).css({width : this.percent + '%'});
+                    }
+                });
+            });
+sp. < span의 dom을 불러와서 jQuery를 사용해 배열을 관리하고자 할 때 
+each() 메서드를 사용할 수 있다.
+each() 메서드는 매개 변수로 받은 것을 사용해 
+for in 반복문 과 같이 배열이나 객체의 요소를 검사할 수 있음
+
+매개변수인 a는 a = 는 sp의 배열, 즉 span의 개수만큼 배열로 들고오고
+예시 sp = [span , span ,span, ] 이런식
+a는 스판의 개수만큼 인덱스 숫자를 가지게 됨 
+그러면 for문이나 if문 ++ 을 사용하지 않고도 each로 배열로 가져온 숫자를
+부여할 수 있음.
+

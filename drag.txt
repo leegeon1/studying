@@ -1,0 +1,48 @@
+0428
+
+제이쿼리 ul를 사용하는 방법
+
+
+function name ( ) 파라미터 안에는
+var int = 0; , 일반
+var int = [0,1,2,3] 배열
+var int = {key : keyflame , key : keyflame} 여러개의 데이터를 넣을 때는 그 사이에 컴마를 써줘야함
+오브젝트형 < 여러개의 데이터가 들어가기 때문에 컴마로 마침표를 써줘야함
+
+
+드래그로 슬라이드 바 만들기
+$(function(){
+            var va = $('.var');
+	슬라이드 바 위에 버튼의 변수선언
+            var ag = $('.artGroup');
+	아티클의 그룹 변수선언
+            var artvar = $('.slideVar').css('width');
+	슬라이드 바 전체의 너비를 구하기 위해 선언
+            console.log(artvar);
+
+            va.draggable({
+                // revert: true,
+		버튼이 움직일 수 있도록 하는 함수
+                containment:'.slideVar',	
+		슬라이드바 밖으로 버튼이 나가지 않게 컨테인먼트로 고정
+                axis:'x', 
+		x축으로만 이동할 수 있게 axis로 고정
+                drag:function(){
+                    artvar = parseInt(artvar);
+		아까 선언해준 변수 artvar를 숫자열로 변환시켜줌
+                    var posi = $(this).position().left;
+		선택한 그 자체를 포지션 레프트로 왼쪽부터 시작하게 끔 만들고
+		그걸 posi로 변수선언
+                    var barwd = parseInt($(this).css('width'));
+		슬라이드 버튼의 너비를 구해야해서 숫자열로 바꾼 후 쓰기 편하게
+		선언해줌
+                    var sent = posi / (artvar-barwd) * 100;   
+		슬라이드 바를 구동하기 위한 전체 수식 
+		즉 내가 움직이는 버튼의 위치 / (슬라이드 바 전체의 너비  -  버튼 자체가 갖고있는 너비) 에 * 100 < 100은 전체를 100분율로
+		나눠야해서 넣어줌
+                    ag.css({marginLeft : -sent+'%'});
+		마진 레프트를 통해서 아까 위에 전체 수식을 마이너스해주면  내가 움직이는 만큼의 마진레프트가 적용됨 뒤에 픽셀 적용 안되게
+		퍼센트로 해야함.
+                }
+            });
+        });
