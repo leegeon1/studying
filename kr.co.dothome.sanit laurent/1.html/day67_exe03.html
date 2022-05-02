@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.graf{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        div.gragh{
+            display: flex;
+            margin-top: 40px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            outline: 1px solid black;
+        }
+        div.gragh>div{
+            width: 50%;
+            overflow: hidden;
+        }
+        div.gragh>div.left>div.per{
+            width: 100%;
+            height: 200px;
+            background-color: black;
+            transform: rotate(180deg);
+            transform-origin: right;
+        }
+        div.gragh>div.right>div.per{
+            width: 100%;
+            height: 200px;
+            background-color: gold;
+            transform: rotate(0deg);
+            transform-origin: right;
+            margin-left: -100%;
+        }
+        div.gragh>div.inner{
+            outline: 1px solid black;
+            width: 95%;
+            height: 95%;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            margin: auto;
+        }
+        div.gragh>div.inner h2{
+            width: 20%;
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            margin: auto;
+            top: 0; left: 0; bottom: 0; right: 0;
+            color: black;
+        }
+        </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var now = 0, leftDg = 0, rgtDg = 0;
+            var gaf = $('.gragh');
+            gaf.each(function(a){
+                gaf.eq(a).mouseenter(function(){
+                    num = $(this).attr('data-num');
+                    $({per:0}).animate({per:num},{
+                        duration : 500,
+                        progress : function(){
+                            now = this.per * 3.6
+                            rgtDg = Math.min(now,180);
+                            leftDg = Math.max(now,180);
+                            $('.left .per').eq(a).css('transform','rotate(' + leftDg + 'deg)');
+                            $('.right .per').eq(a).css('transform','rotate(' + rgtDg + 'deg)');
+                            $('.inner h2').eq(a).text(parseInt(this.per) + '%');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="graf">
+        <div class="graghTop">
+            <div class="gragh" data-num="10">
+                <div class="left">
+                    <div class="per"></div>
+                </div>
+                <div class="right">
+                    <div class="per"></div>
+                </div>
+                <div class="inner">
+                    <h2><span></span>%</h2>
+                </div>
+            </div>
+            <div class="gragh" data-num="20">
+                <div class="left">
+                    <div class="per"></div>
+                </div>
+                <div class="right">
+                    <div class="per"></div>
+                </div>
+                <div class="inner">
+                    <h2><span></span>%</h2>
+                </div>
+            </div>
+            <div class="gragh" data-num="30">
+                <div class="left">
+                    <div class="per"></div>
+                </div>
+                <div class="right">
+                    <div class="per"></div>
+                </div>
+                <div class="inner">
+                    <h2><span></span>%</h2>
+                </div>
+            </div>
+        </div>
+        <div class="graghBtm">
+            <div class="gragh" data-num="60">
+                <div class="left">
+                    <div class="per"></div>
+                </div>
+                <div class="right">
+                    <div class="per"></div>
+                </div>
+                <div class="inner">
+                    <h2><span></span>%</h2>
+                </div>
+            </div>
+            <div class="gragh" data-num="70">
+                <div class="left">
+                    <div class="per"></div>
+                </div>
+                <div class="right">
+                    <div class="per"></div>
+                </div>
+                <div class="inner">
+                    <h2><span></span>%</h2>
+                </div>
+            </div>
+            <div class="gragh" data-num="80">
+                <div class="left">
+                    <div class="per"></div>
+                </div>
+                <div class="right">
+                    <div class="per"></div>
+                </div>
+                <div class="inner">
+                    <h2><span></span>%</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

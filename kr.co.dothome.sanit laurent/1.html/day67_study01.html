@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.gragh{
+            width: 200px;
+            height: 200px;
+            outline: 1px solid red;
+            border-radius: 50%;
+            margin-top: 50px;
+            margin-left: 50px;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+        div.gragh>div{
+            width: 50%;
+            overflow: hidden;
+        }
+        div.gragh>div.left>div.per{
+            width: 100%;
+            height: 200px;
+            background-color: #fc0;
+            transform: rotate(180deg);
+            transform-origin: right;
+        }
+        div.gragh>div.right>div.per{
+            width: 100%;
+            height: 200px;
+            background-color: blue;
+            transform-origin: right;
+            transform: rotate(0deg);
+            margin-left: -100%;
+        }
+        div.gragh>div.inner{
+            width: 90%;
+            height: 90%;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            outline: 1px solid black;
+        }
+        div.gragh>div.inner h2{
+            width: 20%;
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            margin: auto;
+            top: 0;left: 0; right:0;bottom: 0;
+        }
+        </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var now=0, leftDeg=0, rghDeg=0;
+            $({per:0}).animate({per:80},{
+                duration : 500,
+                progress : function(){
+                    now = this.per * 3.6;
+                    rghDeg = Math.min(now,180);
+                    leftDeg = Math.max(now,180);
+                    console.log(leftDeg);
+                    $('.left .per').css('transform','rotate(' + leftDeg + 'deg)');
+                    $('.right .per').css('transform','rotate(' + rghDeg + 'deg)');
+                    $('.inner h2').text(parseInt(this.per) + '%');
+                }          
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="gragh">
+        <div class="left">
+            <div class="per"></div>
+        </div>
+        <div class="right">
+            <div class="per"></div>
+        </div>
+        <div class="inner">
+            <h2>50%</h2>
+        </div>
+    </div>
+</body>
+</html>

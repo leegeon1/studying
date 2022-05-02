@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var bar = $('section div');
+            var num = 0;
+            bar.mouseenter(function(){
+                var ind = $(this).attr('data-num');
+                num = $(this).find('.texts').attr('data-num');
+                $({pc:0}).animate({pc:num},{
+                    duration: 1000,
+                    progress : function(){
+                        $('h4 span').eq(ind).text(parseInt(this.pc));
+                        console.log(this);
+                        $('.gauge').eq(ind).css({width : parseInt(this.pc) + '%'});
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        .content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 150px auto;
+        }
+        header{           
+            text-align: center;
+        }
+        header h2{
+            text-transform: capitalize;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 80px;
+        }
+        header p{
+            width: calc(100% / 12 * 4.5);
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 20px;
+            height: 40px;
+            overflow: hidden;
+        }
+        section{
+            width: 100%;
+            margin-top: 80px;
+        }
+        section .artTop{
+            display: flex;
+            justify-content: space-around;
+        }
+        section .artBtm{
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .prog{
+            width: calc(50% - 20px);
+        }
+        .prog .texts{
+            display: flex;
+            justify-content: space-between;
+        }
+        .prog .texts h3{
+            font-size: 18px;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+        .bar{
+            margin-top: 10px;
+            width: 100%;
+            background-color: #ccc;
+            height: 20px;
+            border-radius: 10px;
+        }
+        .bar .gauge{
+            border-radius: 10px;
+            width: 0%;
+            height: 20px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h2>division</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, id dolore nemo consectetur asperiores recusandae quasi quae voluptatibus temporibus obcaecati voluptatem rem quas dolores non aliquid quis dignissimos unde pariatur!</p>
+        </header>
+        <section>
+            <div class="artTop">
+                <div class="prog " data-num="0">
+                    <div class="texts" data-num="20">
+                        <h3>segment title</h3>
+                        <h4><span>0</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="gauge"></div>
+                    </div>
+                </div>
+                <div class="prog" data-num="1">
+                    <div class="texts" data-num="40">
+                        <h3>segment title</h3>
+                        <h4><span>0</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="gauge"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="artBtm">
+                <div class="prog" data-num="2">
+                    <div class="texts" data-num="60">
+                        <h3>segment title</h3>
+                        <h4><span>0</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="gauge"></div>
+                    </div>
+                </div>
+                <div class="prog" data-num="3">
+                    <div class="texts" data-num="80">
+                        <h3>segment title</h3>
+                        <h4><span>0</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="gauge"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn">button</div>
+        </section>
+    </div>
+</body>
+</html>

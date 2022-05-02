@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        svg{
+            width: 220px;
+            height: 220px;
+        }
+        svg>circle{
+            fill: #fff;
+            stroke: burlywood;
+            stroke-width: 5;
+            stroke-dasharray: 629;
+            stroke-dashoffset: 629;
+            transform-origin: 50%;
+            transform: rotate(-90deg);
+            stroke-linecap: round;
+        }
+        /* 서클태그는 보더가 안먹힘 */
+        /* 스트로크는 우리가 사용 할 그래프의 색 */
+        /* stroke-dasharray: 2; 이거는 점선 */
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var percent = 0;
+            $({per:0}).animate({per:100},{
+                duration:1000,
+                progress : function(){
+                    percent = 629 - ((629 * this.per) / 100);
+                    $('circle').css('stroke-dashoffset',percent);
+                    // 스트로크 대쉬오프셋에 들어가는 값에 곱하기 per를 해주고
+                    // 나누기 100% 해주면 전체 백등분 한 값이 나옴
+                    // 전체 - (전체 * per) / 100
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <!-- div안에 svg 넣어도 됨 -->
+        <!-- svg 안에 뭐 넣고싶으면 svg 자식이 아니라 형제요소로 하고 포지션으로 위치 잡아줘야함 -->
+        <svg>
+            <!-- <circle cx=""></circle> 이거 사용할 때 씀 -->
+            <!-- cx="" < 반지름이 얼마나 들어갈 건지 110이 들어간 이유는 양쪽 보더 추가로 준 거 -->
+            <!-- r은 지름 -->
+            <circle cx="110" cy="110" r="100"></circle>
+        </svg>
+    </div>
+</body>
+</html>

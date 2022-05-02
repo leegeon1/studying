@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        .group{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1080px;
+            margin: 200px auto;
+        }
+        div{
+            position: relative;
+            width: 100%;
+            height: 200px;
+        }
+        div>svg{
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            margin: auto;
+            width: 120px;
+            height: 120px;
+            fill: transparent;
+            stroke: black;
+            stroke-width: 3;
+            stroke-dasharray: 315;
+            stroke-dashoffset: 315;
+            transform-origin: 50%;
+            transform: rotate(-90deg);
+            stroke-linecap: round;
+            /* stroke-dasharray: 629;
+            stroke-dashoffset: 629;
+            transform-origin: 50%;
+            transform: rotate(-90deg);
+            stroke-linecap: round; */
+        }
+        div>h2{
+            text-align: center;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            margin: auto;
+            height: 40px;
+            line-height: 40px;
+        }
+        </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var ck = $('div');
+            ck.mouseenter(function(){
+                var ind = $(this).index()
+                var per = 0;
+                var num = $(this).attr('data-num');
+                $({per:0}).animate({per:num},{
+                    duration: 1000,
+                    progress : function(){
+                        per = 315 - ((315 * this.per) / 100);
+                        $('h2 span').eq(ind).text(parseInt(this.per));
+                        $('circle').eq(ind).css('stroke-dashoffset',per);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="group">        
+        <div data-num="20">
+            <svg data-num="20"><circle cx="60" cy="60" r="50"></circle></svg>
+            <h2><span>0</span>%</h2>
+        </div>
+        <div data-num="40">
+            <svg data-num="40"><circle cx="60" cy="60" r="50"></circle></svg>
+            <h2><span>0</span>%</h2>
+        </div>
+        <div data-num="60">
+            <svg data-num="60"><circle cx="60" cy="60" r="50"></circle></svg>
+            <h2><span>0</span>%</h2>
+        </div>
+        <div data-num="80">
+            <svg data-num="80"><circle cx="60" cy="60" r="50"></circle></svg>
+            <h2><span>0</span>%</h2>
+        </div>
+        <div data-num="100">
+            <svg data-num="100"><circle cx="60" cy="60" r="50"></circle></svg>
+            <h2><span>0</span>%</h2>
+        </div>
+    </div>
+</body>
+</html>
