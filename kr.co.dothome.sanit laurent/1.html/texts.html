@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 시간줘서 순차적으로 나오는거 & 비디오</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        var insa = '안녕하세요';
+        var x = 0;
+        for(var i = 0; i < insa.length; i++){
+            setTimeout(function(){
+                console.log(insa[x]);
+                x++;
+            },i*500);
+        }
+        // setTimeout(function(){
+        //     console.log(insa[1]);
+        // },1000);
+        // setTimeout(function(){
+        //     console.log(insa[2]);
+        // },1500);
+        // setTimeout(function(){
+        //     console.log(insa[3]);
+        // },2000);
+        // setTimeout(function(){
+        //     console.log(insa[4]);
+        // },2500);
+
+        $(function(){
+            $('button').eq(0).click(function(){
+                $('video').get(0).play();
+                // 비디오에는 반드시 get함수가 필요하고 get 함수엔 0이 필요
+                // 비디오의 컨트롤러에 접근하기 위한 함수
+            });
+            $('button').eq(1).click(function(){
+                $('video').get(0).pause();
+            });
+        });
+    </script>
+</head>
+<body>
+    <video src="./video/Seoul - 21985.mp4"></video>
+    <button>재생</button><button>일시정지</button>
+</body>
+</html>
