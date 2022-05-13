@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body{
+            position: relative;
+            height: 500vh;
+            cursor: none;
+            background-color: aquamarine;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #fc0;
+            position: fixed;
+            top: 500px; left:500px;
+            mix-blend-mode: darken;
+            transform: translate(-50%,-50%);
+        }
+        h1{
+            font-size: 72px;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var posX = 0, posY = 0;
+            $(window).mousemove(function(x){
+                posX = x.clientX
+                posY = x.clientY
+                $('div').css({
+                    top: x.clientY,
+                    left: x.clientX
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <h1>제이쿼리 수업은 재밌어</h1>
+</body>
+</html>

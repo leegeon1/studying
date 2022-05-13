@@ -37,6 +37,12 @@
                 alert('환영합니다');
             }
             console.log($.cookie(name));
+
+            ag.animate({
+                marginLeft : '-55%'
+            },800,function(){
+                ag.css({marginLeft : '-55%'});
+            });
         });
         });
     </script>
