@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        section{
+            width: 80%;
+            max-width: 1080px;
+            margin: 150px auto;
+        }
+        .artView{
+            overflow: hidden;
+        }
+        .artGroup{
+            width: 600%;
+            display: flex;
+            justify-content: space-between;
+            touch-action: pan-y;
+            -ms-touch-action: pan-y;
+        }
+        article{
+            width: calc(100% / 6);
+            height: 200px;
+            color: #fff;
+            font-size: 36px;
+            line-height: 40px;
+            text-transform: uppercase;
+        }
+        article.i1{
+            background-color: black;
+        }
+        article.i2{
+            background-color: red;
+        }
+        article.i3{
+            background-color: blue;
+        }
+        article.i4{
+            background-color: green;
+        }
+        article.i5{
+            background-color: purple;
+        }
+        article.i6{
+            background-color: orange;
+        }
+        button{
+            line-height: 40px;
+            font-size: 12px;
+            height: 40px;
+        }
+    </style>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery.mobile.custom.js"></script>
+    <script>
+        $(function(){
+            var i = 0;
+            var ag = $('.artGroup');
+            var at = $('.artGroup article');
+            var btn = $('button');
+            var flag = false;
+            var wd = $(window).width();
+            if(wd > 1024){
+                
+            }else if( wd > 420 && wd <= 1024){
+
+            }else{
+                ag.swipeleft(function(){
+                    ag.animate({
+                        marginLeft : '-100%'
+                    },500,function(){
+                        ag.find('article:first').appendTo(ag);
+                        ag.css({
+                            marginLeft : '0'
+                        });
+                    });
+                });
+                ag.swiperight(function(){
+                    ag.animate({
+                        marginLeft : '0%'
+                    },500,function(){
+                        ag.find('article:last').prependTo(ag);
+                        ag.css({
+                            marginLeft : '-100%'
+                        });
+                    });
+                });
+            }
+            btn.last().click(function(){
+                if(!flag){
+                    flag = true;
+                    ag.animate({
+                        marginLeft : '-100%'
+                    },500,function(){
+                        ag.find('article:first').appendTo(ag);
+                        ag.css({
+                            marginLeft : '0'
+                        });
+                        flag = false;
+                    });
+                }
+            });
+            // ag.swiperight(function(){
+            //     i--;
+            //     if(i<=0){
+            //         i=0;
+            //     }
+            //     ag.css({marginLeft : i * -100+'%'});
+            // });
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <div class="artView">
+            <div class="artGroup">
+                <article class="i1">1</article>
+                <article class="i2">2</article>
+                <article class="i3">3</article>
+                <article class="i4">4</article>
+                <article class="i5">5</article>
+                <article class="i6">6</article>
+            </div>
+            <button>left</button>
+            <button>right</button>
+        </div>
+    </section>
+</body>
+</html>

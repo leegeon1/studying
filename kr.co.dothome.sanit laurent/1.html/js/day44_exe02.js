@@ -18,7 +18,7 @@ $(function(){
         $(this).addClass('show');
         var img = $('.thumb>li').eq(dat).css('background-image');
         thumbView.css('background-image',img);
-        console.log(dat)
+        console.log(dat);
         ind=dat;
 
         acoLi.even().find('span:eq(0)').text('+');

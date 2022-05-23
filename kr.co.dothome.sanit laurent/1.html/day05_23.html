@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 용량 이슈로 인해 js는 바디 안에 넣어주기 -->
+<body>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <script>
+        const h1Dom = document.querySelectorAll('h1');
+        let flag = [];
+        // for(var i = 0; i < h1Dom.length; i++){
+            //     h1Dom[i];
+            // }
+            // h1Dom.forEach((e)=>{e.onclick=()=>{alert('!!')}});
+        h1Dom.forEach(function(e,ind){
+            flag[ind]=false;
+            e.onclick=(o)=>{
+                if(!flag[ind]){
+                    o.currentTarget.animate({
+                        color : 'red',
+                        fontSize : '100px'
+                    },{
+                        duration : 500,
+                        fill : 'forwards'
+                    });
+                    flag[ind]=true;
+                }else{
+                    o.currentTarget.animate({
+                        color : 'black',
+                        fontSize : '30px'
+                    },{
+                        duration : 500,
+                        fill : 'forwards'
+                    });
+                    flag[ind]=false;
+                };
+            };
+        });
+            // e.onclick=function(){
+            //     console.log(this);
+            // };
+            // e.onclick=(o)=>{
+            //     console.log(o.currentTarget);
+                // currentTarget < 디스의 역할
+                // o.currentTarget.animate({
+                //     color :'red'
+                    // fontSize :['200px','300px']
+                    // 이렇게 배열로도 값을 사용 가능
+                // },{
+                //     duration : 500,
+                //     fill : 'forwards'
+                // });
+                    // 키프레임처럼 적용돼서 fill : forwards 를 같이 적용시켜
+                    // 줘야지 그 값이 고정됨
+            // };
+    </script>
+</body>
+</html>

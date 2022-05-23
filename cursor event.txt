@@ -1,0 +1,8 @@
+curserevent
+
+client x = viewport 기준
+좌우를 의미함 x축
+
+
+page x = 전체 page 기준 
+

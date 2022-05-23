@@ -1,0 +1,14 @@
+html을 만든 회사w3c 가 html 웹표준을 정의함
+
+노말 버전은 스텝 4만 잡아내고
+유니콘 버전은 스텝3도 잡아냄 
+
+https://validator.w3.org/unicorn/?ucn_lang=ko#validate-by-uri+task_conformance
+웹표준 검사기
+
+https://accessibility.kr/
+웹접근성 진단
+
+레이블에서 에러날 확률이 높고
+레이블은 라벨이랑 id가 충돌해서 그럼 
+반드시 적어줘야함

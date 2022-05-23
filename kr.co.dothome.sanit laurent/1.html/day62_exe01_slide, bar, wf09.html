@@ -16,14 +16,13 @@
 
             for(var i = 0; i < $('body>div').length; i++){
                 loc[i]= $('body>div').eq(i).offset().top;
-                // console.log(loc)
+                console.log(i)
             }
             pag.find('li').click(function(){
                 var atr = $(this).attr('data-num');
                 $('html').animate({
                     scrollTop:loc[atr]
                 },500)
-                console.log(atr);
             });
         });
     </script>
