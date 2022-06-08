@@ -1,0 +1,9 @@
+document.query selecter - 단수
+document.query selecter all - 복수
+쿼리셀렉터는 es6 버전에 나온 거라
+const 나 let을 사용하면 됨
+
+선언 수
+var - es5
+const - es6 - 상수(변하지 않는 수)
+let - es6 - 변수(변하는 수)
