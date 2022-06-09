@@ -7,36 +7,76 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/xeicon.min.css">
-    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function(){
+            var loc = [];
+            var z = 0;
+            var zz = 0;
+            var flag = false;
+            var cnt = $('.Wrap div');
+            for(i = 0; i  < cnt.length; i++){
+                loc[i] = cnt.eq(i).offset().top;
+            };
+            console.log(flag);
             $(window).scroll(function(){
                 $('.content').each(function(i){
                     var elemt = $(this).offset().top; + $(this).outerHeight();
                     var wd = $(window).scrollTop() + $(window).height();
+                    // console.log(wd);
+                    // console.log(elemt);
                     if(wd > elemt){
-                        $(this).animate({'opacity':'1'},1000);
+                        $('.content').eq(i).animate({'opacity':'0'},1500);
                     }
                 });
-                $('span').each(function(i){
+                $('.content span').each(function(i){
                     var elemt = $(this).offset().top; + $(this).outerHeight();
                     var wd = $(window).scrollTop() + $(window).height();
                     if(wd > elemt){
-                        $(this).animate({'left':'50%'},2000);
+                        $(this).animate({'left':'50%'},1500);
                     }
                 });
-            }); 
+            });
+            $(window).on('mousewheel',function(eve){
+                z = eve.originalEvent.wheelDelta;
+                console.log(flag);
+                if(!flag){
+                    if(z < 0){
+                        flag = true;
+                        zz++;
+                        if(zz>=6){zz=6;}
+                    }else{
+                        flag=true;
+                        zz--;
+                        if(zz<=0){zz=0}
+                    };
+                    $('html').animate({
+                        scrollTop:loc[zz]
+                    },500,function(){
+                        flag = false;
+                    });
+                };
+            });
         });
+        history.scrollRestoration = "manual";
     </script>
     <style>
         .Wrap{
             width: 100%;
             overflow: hidden;
         }
-        main{
+        .main{
             height: 100vh;
             background-color: black;
             color: #fff;
+        }
+        .main span{
+            font-size: 56px;
+            line-height: 100px;
+            position: absolute;
+            top: 50%;left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
         }
         .content{
             width: 100%;
@@ -49,7 +89,7 @@
             max-width: 1600px;
             margin: 0 auto; 
         }
-        span{
+        .content section span{
             font-size: 56px;
             line-height: 100px;
             position: absolute;
@@ -57,7 +97,7 @@
             transform: translate(-50%,-50%);
             text-align: center;
         }
-        span:nth-child(2){
+        .content section span:nth-child(2){
             left: 150%;
             margin-top: 100px;
             width: 50%;
@@ -81,11 +121,11 @@
 </head>
 <body>
     <div class="Wrap">
-        <main>
+        <div class="main">
             <section>
                 <span>오신걸 환영합니다.</span>
             </section>
-        </main>
+        </div>
         <div class="content cnt01">
             <section>
                 <span>안녕하세요</span>
