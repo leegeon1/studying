@@ -256,3 +256,92 @@
 // window.addEventListener("copy",handleWindowCopy);
 // window.addEventListener("offline",handleWindowOffline);
 // window.addEventListener("online",handleWindowOnline);
+
+// 날짜 계산기 연산자 사용법
+
+// let num = parseInt(prompt("숫자를 입력해주세요"));
+
+// sec=24*60*60;
+// si=60*60; 
+// min=60;
+
+// const days = parseInt(num/sec);
+// num%=sec;
+// const hor = parseInt(num/si);
+// num%=si;
+// const minit =  parseInt(num/min);
+// num%=min;
+
+// alert(days+"일 "+hor+"시 "+minit+ "분"+num+ "초 입니다.");
+
+
+// const title = document.querySelector(".hello h1");
+// function handleTitleClick(){
+//     const actived = "active";
+    // if(title.classList.contains(actived)){
+    //     title.classList.remove(actived);
+    // }else{ 
+    //     title.classList.add(actived);
+    // }
+//     title.classList.toggle(actived);
+// };
+// title.addEventListener("click",handleTitleClick);
+
+
+
+
+// let innerWidth = window.innerWidth;
+// const bg = document.body;
+// function backGroundColors() {
+//     const bgColor = {
+//         top : "top",
+//         mid : "mid",
+//         btm : "btm"
+//     }
+//     if (innerWidth > 1000) {
+//         bg.classList.remove(bgColor.mid,bgColor.btm);
+//         bg.classList.add(bgColor.top);
+//     } else if (innerWidth >= 700 && innerWidth < 1000) {
+//         bg.classList.remove(bgColor.top,bgColor.btm);
+//         bg.classList.add(bgColor.mid);
+//     } else if (innerWidth < 699) {
+//         bg.classList.remove(bgColor.mid,bgColor.top);
+//         bg.classList.add(bgColor.btm);       
+//     };
+// };
+
+
+// const bg = document.body;
+// window.addEventListener("resize", function(){
+//     const newWindow = this.innerWidth;
+//     const bgColor = {
+//         top : "top",
+//         mid : "mid",
+//         btm : "btm"
+//     }
+//     if (newWindow > 1000) {
+//         bg.classList.remove(bgColor.mid,bgColor.btm);
+//         bg.classList.add(bgColor.top);
+//     } else if (newWindow >= 700 && newWindow < 1000) {
+//         bg.classList.remove(bgColor.top,bgColor.btm);
+//         bg.classList.add(bgColor.mid);
+//     } else if (newWindow < 699) {
+//         bg.classList.remove(bgColor.mid,bgColor.top);
+//         bg.classList.add(bgColor.btm);       
+//     };
+// });
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
