@@ -16,7 +16,7 @@
         .sexy-font{
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         } */
-        .top {
+        /* .top {
             background-color: blue;
         }
         .mid {
@@ -24,6 +24,14 @@
         }
         .btm {
             background-color: green;
+        } */
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+        form#designate label{
+            font-weight: 700;
         }
     </style>
 </head>
@@ -31,7 +39,19 @@
     <!-- <div class="hello">
         <h1 class="sexy-font">Grab me!</h1>
     </div> -->
-    <h2>Hello!</h2>
+    <!-- <h2>Hello!</h2> -->
+    <h1>Random Number Game</h1>
+    <form id="designate">
+      <label for="provider">Generate a Number between 0 and </label>
+      <input type="number" name="provider" min="0" />
+    </form>
+    <form id="nums">
+      <label for="user">Guess the number:</label>
+      <input type="number" name="user" min="0" />
+      <input type="submit" value="play" />
+    </form>
+    <h3></h3>
+    <h4></h4>
     <script src="./js/js_study001.js"></script>
 </body>
 </html>
