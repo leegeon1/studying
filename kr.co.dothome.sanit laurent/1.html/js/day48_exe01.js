@@ -9,7 +9,7 @@ $(function(){
     btn.find('button').last().click(function(){
         if(!onOff){
             i++;
-            i = i%6; 
+            i = i%6;
             onOff = true;
         }
         ag.find('.article').css({width:'0'});
